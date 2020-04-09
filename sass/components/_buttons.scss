@@ -1,0 +1,31 @@
+.button {
+    grid-row: 1 / -1;
+    grid-column: 11 / 13;
+    align-self: center;
+    justify-self: center;
+
+    background: $color-primary-blue;
+    border: none;
+    height: 5rem;
+    width: 10rem;
+    font-size: 1.8rem;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+
+    transition: all .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        background: $color-secondary-blue;
+        transform: scale(1.02);
+        box-shadow: $shadow-button;
+    }
+
+    &:active {
+        cursor: pointer;
+        background: $color-secondary-blue;
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
