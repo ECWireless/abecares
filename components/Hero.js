@@ -6,13 +6,13 @@ export default function Hero() {
             <div className="container-main">
                 <div id="hero__white-bg" />
                 <div id="hero__photo-container">
-                    <img id="hero__photo" src="/home-care-photo.jpeg" alt=""/>
+                    <img id="hero__photo" src="/home-care-photo.jpeg" alt="Home Care Photo"/>
                 </div>
 
                 <div id="hero__text-container">
                     <div id="hero__subtitle-container">
                         <p className="p-m" id="hero__subtitle">Home Care</p>
-                        <div id="hero__line" />
+                        <div className="line" />
                     </div>
 
                     <h1 className="h1">Your Need is Our Mission</h1>

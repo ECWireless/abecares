@@ -8,7 +8,12 @@
 }
 
 .h2 {
-
+    font-family: $font-header;
+    color: $color-primary-blue;
+    font-size: 4.2rem;
+    font-weight: 900;
+    line-height: 5rem;
+    letter-spacing: 2.5px;
 }
 
 .h3 {

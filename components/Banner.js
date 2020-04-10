@@ -7,18 +7,21 @@ export default function Banner() {
 
             <div className="banner__text-container banner__text-container--1">
                 <h3 className="h3" id="banner__header">Contact Us</h3>
+                <div className="line" id="banner__line" />
                 <p className="p-s">(412) 320-3696</p>
                 <p className="p-s" id="banner__paragraph">info@abecares.com</p>
             </div>
 
             <div className="banner__text-container banner__text-container--2">
                 <h3 className="h3" id="banner__header">Visit Us</h3>
+                <div className="line" id="banner__line" />
                 <p className="p-s">6611 Wilkins Avenue</p>
                 <p className="p-s" id="banner__paragraph">Pittsburgh PA 15217 US</p>
             </div>
 
             <div className="banner__text-container banner__text-container--3">
                 <h3 className="h3" id="banner__header">Services</h3>
+                <div className="line" id="banner__line" />
                 <p className="p-s">Personal Assistance</p>
                 <p className="p-s" id="banner__paragraph">Specialized Care</p>
                 <p className="p-s" id="banner__paragraph">Companionship</p>
