@@ -1,46 +1,49 @@
+
+import React, { Component } from 'react'
 import Head from 'next/head';
 import '../sass/styles.scss';
+import "scroll-behavior-polyfill";
 
 // Components
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
+import About from '../components/About';
+import Testimonial from '../components/Testimonial';
 
-const Home = () => (
-	<div className="container">
-		<Head>
-			<title>Abraham Home Care</title>
-			<link rel="icon" href="/favicon.ico" />
-			<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
-		</Head>
 
-		<main>
-			<Header />
-			<Hero />
-			<Banner />
-			<section className="container-main" id="about">
-				<div id="about__text-container">
-					<div id="hero__subtitle-container">
-							<p className="p-m" id="about__subtitle">About Us</p>
-							<div className="line" />
-						</div>
+export default class index extends Component {
 
-						<h2 className="h2">Thorough in knowledge, diverse in practice</h2>
-						<p className="p-s" id="about__paragraph">Our staff is thoroughly trained to work with patients with a wide range of diagnoses. These include Autism, Cerebral Palsy, Dementia, MS, Spinal cord injuries, and many other injuries that limit ones ability to  independently care for themselves.</p>
-						<button className="button" id="about__button">Learn More</button>
-					</div>
-				<div id="about__photo-container">
-					<img id="about__photo" src="/home-care-photo-2.jpeg" alt="Home Care Photo"/>
-				</div>
-			</section>
-			<section className="section">Services</section>
-			<section className="section">Contact</section>
-		</main>
+	scrollToLocation = () => {
+		window.scroll({
+			top: 1000,
+			behavior: 'smooth'
+		});
+	}
 
-		<footer>
-			Footer
-		</footer>
-  </div>
-)
+	render() {
+		return (
+			<div>
+				<Head>
+					<title>Abraham Home Care</title>
+					<link rel="icon" href="/favicon.ico" />
+					<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+				</Head>
 
-export default Home
+				<main>
+					<Header />
+					<Hero />
+					<Banner scrollToLocation={this.scrollToLocation} />
+					<About />
+					<Testimonial />
+					<section className="container">Services</section>
+					<section className="container">Contact</section>
+				</main>
+
+				<footer>
+					Footer
+				</footer>
+			</div>
+		)
+	}
+}

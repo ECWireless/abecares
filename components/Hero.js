@@ -3,10 +3,10 @@ import React from 'react'
 export default function Hero() {
     return (
         <section className="section" id="hero">
-            <div className="container-main">
+            <div className="container">
                 <div id="hero__white-bg" />
                 <div id="hero__photo-container">
-                    <img id="hero__photo" src="/home-care-photo.jpeg" alt="Home Care Photo"/>
+                    <img id="hero__photo" src="/home-care-photo-1.jpg" alt="Home Care Photo"/>
                 </div>
 
                 <div id="hero__text-container">
