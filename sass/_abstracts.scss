@@ -3,13 +3,19 @@ $color-primary-blue: #2A558C;
 $color-primary-green: #0A7338;
 $color-secondary-blue: #29A7D9;
 $color-secondary-green: #2DA63F;
-$color-tertiary-black: #2D2D2D;
-$color-tertiary-white: #707070;
+$color-tertiary-black: #2d2d2d;
+$color-tertiary-grey: #707070;
+$color-tertiary-white: #F2F2F2;
 
 // Fonts
 $font-header: nassim-latin, sans-serif;
 $font-paragraph: mr-eaves-modern, sans-serif;
 
-// SHADOWS
+// Shadows
 $shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.56);
 $shadow-button-hover: 0px 2px 10px 0px rgba(0,0,0,0.3);
+$shadow-right: 8px -2px 10px 0px rgba(0,0,0,0.4);
+$shadow-box: 2px 5px 15px 0px rgba(42, 85, 140, .3);
+
+// Border Radius
+$border-radius: 10px;

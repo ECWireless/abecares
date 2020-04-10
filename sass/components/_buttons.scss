@@ -1,16 +1,17 @@
 .button {
     grid-row: 1 / -1;
-    grid-column: 11 / 13;
+    grid-column: 12 / 14;
     align-self: center;
     justify-self: center;
 
     background: $color-primary-blue;
     border: none;
-    height: 5rem;
-    width: 10rem;
-    font-size: 1.8rem;
+    height: 4.5rem;
+    width: 12rem;
+    font-size: 2.4rem;
+    font-family: $font-paragraph;
     color: #fff;
-    border-radius: 10px;
+    border-radius: $border-radius;
     outline: none;
 
     transition: all .3s ease;

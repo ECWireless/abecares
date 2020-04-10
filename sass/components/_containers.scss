@@ -1,7 +1,6 @@
 .container-main {
     margin: 0 auto;
-    max-width: 90rem;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr repeat(12, 7.5rem) 1fr;
     grid-template-rows: auto;
 }
