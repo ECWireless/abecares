@@ -1,0 +1,50 @@
+#footer {
+    grid-template-rows: 30rem;
+    border-top: 1px solid $color-secondary-blue;
+}
+
+#footer__learn-container {
+    grid-row: 1 / -1;
+    grid-column: 2 / 5;
+    align-self: flex-start;
+    margin-top: 4rem;
+}
+
+#footer__contact-container {
+    grid-row: 1 / -1;
+    grid-column: 5 / 8;
+    align-self: flex-start;
+    margin-top: 4rem;
+}
+
+#footer__book-container {
+    grid-row: 1 / -1;
+    grid-column: 9 / 14;
+    align-self: flex-start;
+    margin-top: 4rem;
+}
+
+#footer__line {
+    margin-top: -1rem;
+    margin-bottom: 2.5rem;
+}
+
+#footer__link {
+    margin-bottom: 1.5rem;
+    transition: all .3s ease;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+}
+
+#footer__paragraph {
+    margin-bottom: 1.5rem;
+}
+
+#footer__button {
+    width: 20rem;
+    height: 6rem;
+    margin-top: 1rem;
+}

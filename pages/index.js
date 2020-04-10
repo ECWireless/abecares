@@ -6,6 +6,7 @@ import "scroll-behavior-polyfill";
 
 // Components
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import About from '../components/About';
@@ -40,9 +41,7 @@ export default class index extends Component {
 					<section className="container">Contact</section>
 				</main>
 
-				<footer>
-					Footer
-				</footer>
+				<Footer />
 			</div>
 		)
 	}
