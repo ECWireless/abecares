@@ -26,7 +26,7 @@ const Home = () => (
 						</div>
 
 						<h2 className="h2">Thorough in knowledge, diverse in practice</h2>
-						<p className="p-m" id="about__paragraph">Our staff is thoroughly trained to work with patients with a wide range of diagnoses. These include Autism, Cerebral Palsy, Dementia, MS, Spinal cord injuries, and many other injuries that limit ones ability to  independently care for themselves.</p>
+						<p className="p-s" id="about__paragraph">Our staff is thoroughly trained to work with patients with a wide range of diagnoses. These include Autism, Cerebral Palsy, Dementia, MS, Spinal cord injuries, and many other injuries that limit ones ability to  independently care for themselves.</p>
 						<button className="button" id="about__button">Learn More</button>
 					</div>
 				<div id="about__photo-container">
