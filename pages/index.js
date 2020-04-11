@@ -38,8 +38,8 @@ export default class index extends Component {
 					<Banner scrollToLocation={this.scrollToLocation} />
 					<About />
 					<Testimonial />
-					{/* <Services />
-					<section className="container">Contact</section> */}
+					<Services />
+					<section className="container" id="contact"></section>
 				</main>
 
 				<Footer />

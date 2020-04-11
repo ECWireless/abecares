@@ -1,5 +1,5 @@
 #services {
-    grid-template-rows: 15rem 5rem 7rem 10rem 30rem;
+    grid-template-rows: 15rem 5rem 7rem 5rem 50rem;
 }
 
 #services__subtitle {
@@ -32,19 +32,93 @@
 }
 
 #services__service1-container {
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 2 / 6;
-    background: lightblue;
+    border: 1px solid rgba(41, 167, 217, .3);
+    margin: 1rem;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px 0px rgba(42, 85, 140, .4);
+
+    transition: all .3s ease;
+
+    &:hover {
+        box-shadow: $shadow-box;
+        transform: scale(1.01);
+    }
 }
 
 #services__service2-container {
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 6 / 10;
-    background: teal;
+    border: 1px solid rgba(41, 167, 217, .3);
+    margin: 1rem;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px 0px rgba(42, 85, 140, .4);
+
+    transition: all .3s ease;
+
+    &:hover {
+        box-shadow: $shadow-box;
+        transform: scale(1.01);
+    }
 }
 
 #services__service3-container {
-    grid-row: 4 / 5;
-    grid-column: 9 / 12;
-    background: yellow;
+    grid-row: 5 / 6;
+    grid-column: 10 / 14;
+    border: 1px solid rgba(41, 167, 217, .3);
+    margin: 1rem;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px 0px rgba(42, 85, 140, .4);
+
+    transition: all .3s ease;
+
+    &:hover {
+        box-shadow: $shadow-box;
+        transform: scale(1.01);
+    }
+}
+
+#services__service-bg {
+    position: relative;
+    height: 8rem;
+    width: 100%;
+    z-index: 0;
+    background: linear-gradient(to left, #0A7338, #2DA63F);
+}
+
+#services__service-bg-variant {
+    position: relative;
+    height: 8rem;
+    width: 100%;
+    z-index: 0;
+    background: linear-gradient(to left, #2A558C, #29A7D9);
+}
+
+#services__service-header {
+    text-align: center;
+    margin-top: -5.5rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    color: #fff
+}
+
+#services__service-photo {
+    height: 30rem;
+    width: 100%;
+}
+
+#services__service-button {
+    margin-top: 3rem;
+    width: 15rem;
+    height: 5rem;
 }
