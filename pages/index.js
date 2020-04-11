@@ -11,6 +11,7 @@ import Hero from '../components/Hero';
 import Banner from '../components/Banner';
 import About from '../components/About';
 import Testimonial from '../components/Testimonial';
+import Services from '../components/Services';
 
 
 export default class index extends Component {
@@ -37,8 +38,8 @@ export default class index extends Component {
 					<Banner scrollToLocation={this.scrollToLocation} />
 					<About />
 					<Testimonial />
-					<section className="container">Services</section>
-					<section className="container">Contact</section>
+					{/* <Services />
+					<section className="container">Contact</section> */}
 				</main>
 
 				<Footer />

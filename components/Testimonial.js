@@ -9,7 +9,7 @@ export default function Testimonial() {
                         <div className="line" />
                     </div>
 
-                    <h2 className="h2">"A very knowledgeable and compatible team, greatly improving the quality of my life."</h2>
+                    <h3 className="h3">"A very knowledgeable and compatible team, greatly improving the quality of my life."</h3>
                     <p className="p-s" id="testimonial__paragraph">- John Smith</p>
                 </div>
             <div id="testimonial__photo-container">
