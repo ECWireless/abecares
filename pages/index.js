@@ -12,6 +12,7 @@ import Banner from '../components/Banner';
 import About from '../components/About';
 import Testimonial from '../components/Testimonial';
 import Services from '../components/Services';
+import Contact from '../components/Contact';
 
 
 export default class index extends Component {
@@ -39,7 +40,7 @@ export default class index extends Component {
 					<About />
 					<Testimonial />
 					<Services />
-					<section className="container" id="contact"></section>
+					<Contact />
 				</main>
 
 				<Footer />

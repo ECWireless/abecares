@@ -13,7 +13,8 @@ export default function Testimonial() {
                     <p className="p-s" id="testimonial__paragraph">- John Smith</p>
                 </div>
             <div id="testimonial__photo-container">
-                <img id="testimonial__photo" src="/home-care-photo-3.jpg" alt="Home Care Photo"/>
+                {/* <img id="testimonial__photo" src="/home-care-photo-3.jpg" alt="Home Care Photo"/> */}
+                <div style={{backgroundImage: 'url(/home-care-photo-3.jpg)'}} id="testimonial__photo" alt="Testimonial Photo" />
             </div>
         </section>
     )

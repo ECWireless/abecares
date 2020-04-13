@@ -27,12 +27,12 @@
 
 #about__photo {
     height: 100%;
-    transform: translateX(-10rem);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
 }
 
 #about__button {
-    width: 15rem;
-    height: 6rem;
     align-self: flex-start;
     margin-top: 6rem;
 }

@@ -6,8 +6,6 @@
 
     background: $color-primary-blue;
     border: none;
-    height: 4.5rem;
-    width: 12rem;
     font-size: 2.4rem;
     font-family: $font-paragraph;
     color: #fff;
@@ -15,6 +13,21 @@
     outline: none;
 
     transition: all .3s ease;
+
+    &__s {
+        width: 12rem;
+        height: 4.5rem;
+    }
+
+    &__m {
+        width: 15rem;
+        height: 5rem;
+    }
+
+    &__l {
+        width: 25rem;
+        height: 6rem;
+    }
 
     &:hover {
         cursor: pointer;

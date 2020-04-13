@@ -9,7 +9,7 @@ export default function about() {
     return (
         <div>
             <Head>
-					<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+				<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
             </Head>
             <main>
                 <Header />

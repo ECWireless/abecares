@@ -24,7 +24,7 @@ export default function Header() {
                     </Link>
                 </nav>
                 <Link href="/contact">
-                    <button className="button">Contact</button>
+                    <button className="button button__s">Contact</button>
                 </Link>
             </div>
         </header>

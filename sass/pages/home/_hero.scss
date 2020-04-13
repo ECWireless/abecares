@@ -20,7 +20,9 @@
 
 #hero__photo {
     height: 100%;
-    transform: translateX(-25rem);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 #hero__text-container {
@@ -53,8 +55,6 @@
 }
 
 #hero__button {
-    width: 25rem;
-    height: 6rem;
     align-self: flex-start;
     margin-top: 4rem;
 }
