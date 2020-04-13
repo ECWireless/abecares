@@ -7,12 +7,12 @@ import "scroll-behavior-polyfill";
 // Components
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import Banner from '../components/Banner';
-import About from '../components/About';
-import Testimonial from '../components/Testimonial';
-import Services from '../components/Services';
-import Contact from '../components/Contact';
+import Hero from '../containers/home/Hero';
+import Banner from '../containers/home/Banner';
+import About from '../containers/home/About';
+import Testimonial from '../containers/home/Testimonial';
+import Services from '../containers/home/Services';
+import Contact from '../containers/home/Contact';
 
 
 export default class index extends Component {
