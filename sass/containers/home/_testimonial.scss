@@ -1,33 +1,33 @@
 #testimonial {
     grid-template-rows: 10rem 60rem;
-}
 
-#testimonial__subtitle {
-    margin-right: 1.5rem;
-}
+    &__subtitle {
+        margin-right: 1.5rem;
+    }
 
-#testimonial__paragraph {
-    margin-top: 3rem;
-}
+    &__paragraph {
+        margin-top: 3rem;
+    }
 
-#testimonial__text-container {
-    grid-column: 8 / 14;
-    grid-row: 2 / -1;
-    align-self: center;
-    justify-self: flex-start;
-}
+    &__text-container {
+        grid-column: 8 / 14;
+        grid-row: 2 / -1;
+        align-self: center;
+        justify-self: flex-start;
+    }
 
-#testimonial__photo-container {
-    grid-column: 1 / 7;
-    grid-row: 2 / -1;
-    z-index: 0;
-    overflow: hidden;
-    border-radius: 0 10px 10px 0;
-}
+    &__photo-container {
+        grid-column: 1 / 7;
+        grid-row: 2 / -1;
+        z-index: 0;
+        overflow: hidden;
+        border-radius: 0 10px 10px 0;
+    }
 
-#testimonial__photo {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+    &__photo {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
 }

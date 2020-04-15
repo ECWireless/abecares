@@ -1,38 +1,38 @@
 #about {
     grid-template-rows: 10rem 60rem;
-}
 
-#about__subtitle {
-    margin-right: 1.5rem;
-}
+    &__subtitle {
+        margin-right: 1.5rem;
+    }
 
-#about__paragraph {
-    margin-top: 1rem;
-}
+    &__paragraph {
+        margin-top: 1rem;
+    }
 
-#about__text-container {
-    grid-column: 2 / 8;
-    grid-row: 2 / -1;
-    align-self: center;
-    justify-self: flex-start;
-}
+    &__text-container {
+        grid-column: 2 / 8;
+        grid-row: 2 / -1;
+        align-self: center;
+        justify-self: flex-start;
+    }
 
-#about__photo-container {
-    grid-column: 9 / 15;
-    grid-row: 2 / -1;
-    z-index: -2;
-    overflow: hidden;
-    border-radius: 10px 0 0 10px;
-}
+    &__photo-container {
+        grid-column: 9 / 15;
+        grid-row: 2 / -1;
+        z-index: -2;
+        overflow: hidden;
+        border-radius: 10px 0 0 10px;
+    }
 
-#about__photo {
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-}
+    &__photo {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+    }
 
-#about__button {
-    align-self: flex-start;
-    margin-top: 6rem;
+    &__button {
+        align-self: flex-start;
+        margin-top: 6rem;
+    }
 }

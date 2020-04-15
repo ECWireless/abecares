@@ -3,9 +3,13 @@ import React from 'react'
 export default function Contact() {
     return (
         <section className="container" id="contact">
+
+            <p id="contact__subtitle" className="p-m">Contact Us</p>
+            <div id="contact__line" className="line" />
+            <h2 id="contact__header" className="h2">How can we help?</h2>
+            <p id="contact__paragraph" className="p-m">We respond within 24 hours!</p>
+
             <form action="" className="form" id="contact__form">
-                <h2 id="contact__header" className="h2">How can we help?</h2>
-                <div id="contact__line" className="line" />
                 <label htmlFor="form__input-name" id="contact__label-name" className="form__label">What is your Name?</label>
                 <input type="text" id="contact__input-name" className="form__input"/>
 

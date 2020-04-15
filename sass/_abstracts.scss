@@ -15,7 +15,12 @@ $font-paragraph: mr-eaves-modern, sans-serif;
 $shadow-button: 0px 1px 3px 0px rgba(0,0,0,0.56);
 $shadow-button-hover: 0px 2px 10px 0px rgba(0,0,0,0.3);
 $shadow-right: 8px -2px 10px 0px rgba(0,0,0,0.4);
-$shadow-box: 2px 5px 15px 0px rgba(42, 85, 140, .3);
+$shadow-box: 2px 2px 8px 0px rgba(42, 85, 140, .4);
+$shadow-box-hover: 2px 5px 15px 0px rgba(42, 85, 140, .3);
 
 // Border Radius
 $border-radius: 10px;
+
+// Border Lines
+$border-box: 1px solid rgba(41, 167, 217, .3);
+$border-thin: 1px solid rgba(112, 112, 112, .2);

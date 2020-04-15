@@ -1,7 +1,7 @@
 .form {
-    border: 1px solid rgba(41, 167, 217, .3);
+    border: $border-box;
     border-radius: $border-radius;
-    box-shadow: 2px 2px 8px 0px rgba(42, 85, 140, .4);
+    box-shadow: $shadow-box;
 
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
         height: 5rem;
         padding: .5rem 2rem;
         border-radius: 5px;
-        border: 1px solid rgba(112, 112, 112, .2);
+        border: $border-thin;
         outline: none;
 
         font-size: 2.4rem;

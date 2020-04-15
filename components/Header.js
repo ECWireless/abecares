@@ -7,19 +7,19 @@ export default function Header() {
         <header className="section" id="header">
             <div className="container">
                 <Link href="/">
-                    <a id="header-logo-link" >
-                        <img src="/logo-horizontal.png" alt="Logo" id="header-logo" />
+                    <a id="header__logo-link" >
+                        <img src="/logo-horizontal.png" alt="Logo" id="header__logo" />
                     </a>
                 </Link>
-                <nav id="container-nav">
+                <nav id="header__list">
                     <Link href="/">
-                        <a className="nav-item">Home</a>
+                        <a id="header__item">Home</a>
                     </Link>
                     <Link href="/about">
-                        <a className="nav-item">About</a>
+                        <a id="header__item">About</a>
                     </Link>
                     <Link href="/services">
-                        <a className="nav-item">Services</a>
+                        <a id="header__item">Services</a>
                     </Link>
                 </nav>
                 <Link href="/contact">

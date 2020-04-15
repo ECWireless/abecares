@@ -1,19 +1,39 @@
 #contact {
-    grid-template-rows: 10rem 70rem 10rem;
+    grid-template-rows: 15rem 5rem 4rem 5rem 60rem 10rem;
 
-    &__form {
+    &__subtitle {
+        grid-row: 1 / 2;
         grid-column: 2 / 14;
-        grid-row: 2 / 3;
-    }
-
-    &__header {
-        text-align: center;
-        margin-top: 5rem;
-        margin-bottom: 1rem;
+        justify-self: center;
+        align-self: flex-end;
+        margin-bottom: 3rem;
     }
 
     &__line {
-        margin: 0 auto;
+        grid-row: 1 / 2;
+        grid-column: 2 / 14;
+        justify-self: center;
+    }
+
+    &__header {
+        grid-row: 2 / 3;
+        grid-column: 2 / 14;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    &__paragraph {
+        grid-row: 3 / 4;
+        grid-column: 4 / 12;
+        justify-self: center;
+        align-self: flex-end;
+        text-align: center;
+    }
+
+    &__form {
+        grid-column: 2 / 14;
+        grid-row: 5 / 6;
+        padding-top: 2rem;
     }
 
     &__button {
