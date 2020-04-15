@@ -4,6 +4,8 @@ import '../sass/styles.scss';
 
 // Components
 import Header from '../components/Header';
+import Contact from '../containers/home/Contact';
+import Footer from '../components/Footer';
 
 export default function contact() {
     return (
@@ -13,7 +15,8 @@ export default function contact() {
             </Head>
             <main>
                 <Header />
-                Contact Page
+                <Contact />
+                <Footer />
             </main>
         </div>
     )

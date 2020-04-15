@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 export default function Hero() {
     return (
@@ -18,7 +19,9 @@ export default function Hero() {
 
                     <h1 className="h1">Your Need is Our Mission</h1>
                     <p className="p-m" id="hero__paragraph">By choosing Abraham Home Care, you or your loved ones will have the ability to continue the comfortable and independent lifestyle you’re accustomed to by utilizing patient care at home.</p>
-                    <button className="button button__l" id="hero__button">Book and Appointment</button>
+                    <Link href="/contact">
+                        <button className="button button__l" id="hero__button">Book and Appointment</button>
+                    </Link>
                 </div>
             </div>
         </section>

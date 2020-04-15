@@ -15,6 +15,9 @@
     grid-column: 5 / 8;
     align-self: flex-start;
     margin-top: 4rem;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #footer__book-container {
@@ -31,6 +34,7 @@
 #footer__link {
     margin-bottom: 1.5rem;
     transition: all .3s ease;
+    text-decoration: none;
 
     &:hover {
         cursor: pointer;

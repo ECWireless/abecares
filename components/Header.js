@@ -12,7 +12,6 @@ export default function Header() {
                     </a>
                 </Link>
                 <nav id="container-nav">
-                    
                     <Link href="/">
                         <a className="nav-item">Home</a>
                     </Link>

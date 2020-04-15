@@ -4,6 +4,8 @@ import '../sass/styles.scss';
 
 // Components
 import Header from '../components/Header';
+import Services from '../containers/home/Services';
+import Footer from '../components/Footer';
 
 export default function services() {
     return (
@@ -13,7 +15,9 @@ export default function services() {
             </Head>
             <main>
                 <Header />
-                Services Page
+                <Services />
+                <div style={{height: '100px'}}></div>
+                <Footer />
             </main>
         </div>
     )

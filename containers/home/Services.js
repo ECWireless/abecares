@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Link from 'next/link';
 
 export default function Services() {
     return (
@@ -12,21 +13,27 @@ export default function Services() {
                 <h4 className="h4" id="services__service-header">Personal Assistance</h4>
                 {/* <img src="/service1.jpeg" id="services__service-photo" alt=""/> */}
                 <div style={{backgroundImage: 'url(/service1.jpeg)'}} id="services__service-photo" alt="Service Photo 1" />
-                <button className="button button__m" id="services__service-button">Learn More</button>
+                <Link href="/services">
+                    <button className="button button__m" id="services__service-button">Learn More</button>
+                </Link>
             </div>
             <div id="services__service2-container">
                 <div id="services__service-bg-variant" />
                 <h4 className="h4" id="services__service-header">Specialized Care</h4>
                 {/* <img src="/service2.png" id="services__service-photo" alt=""/> */}
                 <div style={{backgroundImage: 'url(/service2.png)'}} id="services__service-photo" alt="Service Photo 2" />
-                <button className="button button__m" id="services__service-button">Learn More</button>
+                <Link href="/services">
+                    <button className="button button__m" id="services__service-button">Learn More</button>
+                </Link>
             </div>
             <div id="services__service3-container">
                 <div id="services__service-bg" />
                 <h4 className="h4" id="services__service-header">Companionship</h4>
                 {/* <img src="/service3.jpeg" id="services__service-photo" alt=""/> */}
                 <div style={{backgroundImage: 'url(/service3.jpeg)'}} id="services__service-photo" alt="Service Photo 3" />
-                <button className="button button__m" id="services__service-button">Learn More</button>
+                <Link href="/services">
+                    <button className="button button__m" id="services__service-button">Learn More</button>
+                </Link>
             </div>
         </section>
     )
