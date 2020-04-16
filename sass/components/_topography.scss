@@ -1,4 +1,9 @@
 .h1 {
+    @include respond(big-desktop) {
+        font-size: 9rem;
+        line-height: 8rem;
+    }
+
     font-family: $font-header;
     color: $color-primary-green;
     font-size: 7rem;
@@ -8,6 +13,11 @@
 }
 
 .h2 {
+    @include respond(big-desktop) {
+        font-size: 5.6rem;
+        line-height: 6rem;
+    }
+
     font-family: $font-header;
     color: $color-primary-blue;
     font-size: 4.2rem;
@@ -17,6 +27,10 @@
 }
 
 .h3 {
+    @include respond(big-desktop) {
+        font-size: 4.2rem;
+    }
+
     font-family: $font-header;
     color: $color-tertiary-black;
     font-size: 3.2rem;
@@ -26,6 +40,10 @@
 }
 
 .h4 {
+    @include respond(big-desktop) {
+        font-size: 3.2rem;
+    }
+
     font-family: $font-header;
     color: $color-tertiary-black;
     font-size: 2.6rem;
@@ -43,6 +61,11 @@
 }
 
 .p-m {
+    @include respond(big-desktop) {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
     font-size: 2.4rem;
     font-family: $font-paragraph;
     color: $color-tertiary-grey;
@@ -51,6 +74,11 @@
 }
 
 .p-s {
+    @include respond(big-desktop) {
+        font-size: 2.4rem;
+        line-height: 3rem;
+    }
+
     font-size: 2rem;
     font-family: $font-paragraph;
     color: $color-tertiary-grey;

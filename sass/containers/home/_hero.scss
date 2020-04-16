@@ -1,11 +1,17 @@
 #hero {
+    @include respond(big-desktop) {
+        height: 80rem;
+    }
+
+    height: 70rem;
+
     &__white-bg {
         grid-column: 1 / 9;
         grid-row: 1 / -1;
         z-index: -1;
     
         background: #fff;
-        height: 70rem;
+        height: 100%;
     
         box-shadow: $shadow-right;
     }
@@ -14,7 +20,7 @@
         grid-column: 9 / 15;
         grid-row: 1 / -1;
         z-index: -2;
-        height: 70rem;
+        height: 100%;
         overflow: hidden;
     }
 

@@ -1,4 +1,8 @@
 #banner {
+    @include respond(big-desktop) {
+        grid-template-rows: 30rem;
+    }
+
     grid-template-rows: 25rem;
     margin-top: -5rem;
 

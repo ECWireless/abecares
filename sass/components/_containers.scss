@@ -1,4 +1,8 @@
 .container {
+    @include respond(big-desktop) {
+        grid-template-columns: 1fr repeat(12, 10rem) 1fr;
+    }
+
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr repeat(12, 7.5rem) 1fr;

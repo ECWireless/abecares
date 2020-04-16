@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import Head from 'next/head';
 import '../sass/styles.scss';
 import "scroll-behavior-polyfill";
@@ -16,11 +16,14 @@ import Contact from '../containers/home/Contact';
 
 
 export default class index extends Component {
+	state = {
+		aboutRef: createRef(),
+	}
 
 	scrollToLocation = () => {
 		window.scroll({
-			top: 1000,
-			behavior: 'smooth'
+			top: this.state.aboutRef.current.offsetTop,
+			behavior: 'smooth',
 		});
 	}
 
@@ -37,7 +40,7 @@ export default class index extends Component {
 					<Header />
 					<Hero />
 					<Banner scrollToLocation={this.scrollToLocation} />
-					<About />
+					<About aboutRef={this.state.aboutRef} />
 					<Testimonial />
 					<Services />
 					<Contact />

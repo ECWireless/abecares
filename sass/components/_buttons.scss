@@ -1,4 +1,8 @@
 .button {
+    @include respond(big-desktop) {
+        font-size: 3rem;
+    }
+
     grid-row: 1 / -1;
     grid-column: 12 / 14;
     align-self: center;
@@ -15,16 +19,31 @@
     transition: all .3s ease;
 
     &__s {
+        @include respond(big-desktop) {
+            width: 14rem;
+            height: 5.5rem;
+        }
+
         width: 12rem;
         height: 4.5rem;
     }
 
     &__m {
+        @include respond(big-desktop) {
+            width: 17rem;
+            height: 7rem;
+        }
+
         width: 15rem;
         height: 5rem;
     }
 
     &__l {
+        @include respond(big-desktop) {
+            width: 29rem;
+            height: 7rem;
+        }
+
         width: 25rem;
         height: 6rem;
     }

@@ -36,7 +36,7 @@ export default function Footer() {
                 <div className="line" id="footer__line" />
                 <p className="p-s" id="footer__paragraph">We respond within 24 hours!</p>
                 <a href="tel: 4123203696">
-                    <button className="button" id="footer__button">(412) 320-3696</button>
+                    <button className="button button__l" id="footer__button">(412) 320-3696</button>
                 </a>
             </div>
         </footer>
