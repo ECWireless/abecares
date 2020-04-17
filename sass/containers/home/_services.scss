@@ -71,6 +71,10 @@
             grid-row: 5 / 6;
             grid-column: 3 / 7;
         }
+
+        @include respond(phone) {
+            grid-column: 2 / 8;
+        }
     
         &:hover {
             box-shadow: $shadow-box-hover;
@@ -95,6 +99,10 @@
             grid-row: 6 / 7;
             grid-column: 3 / 7;
         }
+
+        @include respond(phone) {
+            grid-column: 2 / 8;
+        }
     
         &:hover {
             box-shadow: $shadow-box-hover;
@@ -118,6 +126,10 @@
         @include respond(tab-port) {
             grid-row: 7 / 8;
             grid-column: 3 / 7;
+        }
+
+        @include respond(phone) {
+            grid-column: 2 / 8;
         }
     
         &:hover {

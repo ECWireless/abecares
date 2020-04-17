@@ -75,13 +75,14 @@
         display: none;
 
         @include respond(tab-port) {grid-row: 1 / -1;
-            grid-column: 8 / 9;
+            grid-column: 7 / 9;
             align-self: center;
-            justify-self: center;
+            justify-self: flex-end;
             
             height: 6rem;
             width: 6rem;
             border-radius: 50%;
+            margin-right: 2rem;
     
             display: flex;
             flex-direction: column;
