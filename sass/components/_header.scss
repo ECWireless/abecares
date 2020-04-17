@@ -1,9 +1,14 @@
 #header {
+    grid-template-rows: 10rem;
     position: sticky;
     top: 0;
     border-bottom: 1px solid $color-secondary-blue;
     z-index: 10;
     background: #fff;
+
+    @include respond(tab-port) {
+        grid-template-rows: 8rem;
+    }
 
     &__logo-link {
         grid-row: 1 / -1;
@@ -12,6 +17,13 @@
         justify-self: flex-end;
         width: 100%;
         display: flex;
+
+        @include respond(tab-port) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            justify-self: flex-start;
+            margin-left: 3rem;
+        }
     }
 
     &__logo {
@@ -26,9 +38,13 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        height: 10rem;
+        height: 100%;
     
         display: flex;
+
+        @include respond(tab-port) {
+            display: none;
+        }
     }
 
     &__item {
@@ -42,6 +58,88 @@
     
         &:hover {
             color: $color-secondary-blue;
+        }
+    }
+
+    &__button {
+        grid-row: 1 / -1;
+        grid-column: 1 / 14;
+        justify-self: flex-end;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+    }
+
+    &__menu-container {
+        display: none;
+
+        @include respond(tab-port) {grid-row: 1 / -1;
+            grid-column: 8 / 9;
+            align-self: center;
+            justify-self: center;
+            
+            height: 6rem;
+            width: 6rem;
+            border-radius: 50%;
+    
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            transition: all .3s ease;
+    
+            &:hover,
+            &:focus,
+            &:active {
+                background: rgba(112, 112, 112, .1);
+            }
+    
+            &:hover #header__menu-line-top,
+            &:hover #header__menu-line-middle,
+            &:hover #header__menu-line-bottom {
+                background: $color-secondary-blue;
+            }
+        }
+    }
+
+    &__menu-line-top {
+        display: none;
+
+        @include respond(tab-port) {
+            display: inline-block;
+            width: 3rem;
+            height: 3px;
+            background: $color-primary-blue;
+            margin-top: -.1rem;
+            transition: all .3s ease;
+        }
+    }
+
+    &__menu-line-middle {
+        display: none;
+
+        @include respond(tab-port) {
+            display: inline-block;
+            width: 3rem;
+            height: 3px;
+            background: $color-primary-blue;
+            transition: all .3s ease;
+            margin-top: .5rem;
+        }
+    }
+
+    &__menu-line-bottom {
+        display: none;
+
+        @include respond(tab-port) {
+            display: inline-block;
+            width: 3rem;
+            height: 3px;
+            background: $color-primary-blue;
+            margin-top: .5rem;
+            transition: all .3s ease;
         }
     }
 }

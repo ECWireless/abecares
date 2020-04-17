@@ -5,18 +5,30 @@
 
     grid-template-rows: 15rem 5rem 7rem 5rem 50rem;
 
+    @include respond(tab-port) {
+        grid-template-rows: 15rem 5rem 7rem 5rem 55rem 55rem 55rem;
+    }
+
     &__subtitle {
         grid-row: 1 / 2;
         grid-column: 2 / 14;
         justify-self: center;
         align-self: flex-end;
         margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__line {
         grid-row: 1 / 2;
         grid-column: 2 / 14;
         justify-self: center;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__header {
@@ -24,6 +36,10 @@
         grid-column: 2 / 14;
         justify-self: center;
         align-self: flex-end;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__paragraph {
@@ -32,6 +48,10 @@
         justify-self: center;
         align-self: flex-end;
         text-align: center;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__service1-container {
@@ -46,6 +66,11 @@
         box-shadow: $shadow-box;
     
         transition: all .3s ease;
+
+        @include respond(tab-port) {
+            grid-row: 5 / 6;
+            grid-column: 3 / 7;
+        }
     
         &:hover {
             box-shadow: $shadow-box-hover;
@@ -65,6 +90,11 @@
         box-shadow: $shadow-box;
     
         transition: all .3s ease;
+
+        @include respond(tab-port) {
+            grid-row: 6 / 7;
+            grid-column: 3 / 7;
+        }
     
         &:hover {
             box-shadow: $shadow-box-hover;
@@ -84,6 +114,11 @@
         box-shadow: $shadow-box;
     
         transition: all .3s ease;
+
+        @include respond(tab-port) {
+            grid-row: 7 / 8;
+            grid-column: 3 / 7;
+        }
     
         &:hover {
             box-shadow: $shadow-box-hover;

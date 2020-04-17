@@ -12,6 +12,10 @@
 
         color: $color-tertiary-grey;
         letter-spacing: 1px;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
     }
 
     &__input {
@@ -29,6 +33,10 @@
         letter-spacing: 1px;
 
         transition: all .3s ease;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
 
         &:hover {
             border: 1px solid $color-secondary-blue;

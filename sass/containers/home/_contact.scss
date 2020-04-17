@@ -11,12 +11,20 @@
         justify-self: center;
         align-self: flex-end;
         margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__line {
         grid-row: 1 / 2;
         grid-column: 2 / 14;
         justify-self: center;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__header {
@@ -24,6 +32,10 @@
         grid-column: 2 / 14;
         justify-self: center;
         align-self: flex-end;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__paragraph {
@@ -32,12 +44,20 @@
         justify-self: center;
         align-self: flex-end;
         text-align: center;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__form {
         grid-column: 2 / 14;
         grid-row: 5 / 6;
         padding-top: 2rem;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
     }
 
     &__button {

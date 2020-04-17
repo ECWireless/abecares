@@ -1,6 +1,10 @@
 #about {
     grid-template-rows: 10rem 60rem;
 
+    @include respond(tab-port) {
+        grid-template-rows: 5rem 50rem 50rem;
+    }
+
     &__subtitle {
         margin-right: 1.5rem;
     }
@@ -14,6 +18,10 @@
         grid-row: 2 / -1;
         align-self: center;
         justify-self: flex-start;
+
+        @include respond(tab-port) {
+            grid-row: 2 / 3;
+        }
     }
 
     &__photo-container {
@@ -22,6 +30,11 @@
         z-index: -2;
         overflow: hidden;
         border-radius: 10px 0 0 10px;
+
+        @include respond(tab-port) {
+            grid-column: 1 / -1;
+            grid-row: 3 / 4;
+        }
     }
 
     &__photo {

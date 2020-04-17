@@ -1,12 +1,17 @@
 #footer {
     grid-template-rows: 30rem;
     border-top: 1px solid $color-secondary-blue;
+    
 
     &__learn-container {
         grid-row: 1 / -1;
         grid-column: 2 / 5;
         align-self: flex-start;
         margin-top: 4rem;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 4;
+        }
     }
 
     &__contact-container {
@@ -17,6 +22,11 @@
     
         display: flex;
         flex-direction: column;
+
+        @include respond(tab-port) {
+            grid-column: 3 / 6;
+            padding-left: 6rem;
+        }
     }
 
     &__book-container {
@@ -24,6 +34,10 @@
         grid-column: 9 / 14;
         align-self: flex-start;
         margin-top: 4rem;
+
+        @include respond(tab-port) {
+            grid-column: 6 / 8;
+        }
     }
 
     &__line {

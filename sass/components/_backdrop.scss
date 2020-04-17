@@ -1,0 +1,21 @@
+.backdrop__true {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    z-index: 99;
+    opacity: .8;
+    transition: all .5s ease;
+}
+
+.backdrop__false {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    z-index: -5;
+    opacity: 0;
+    transition: all .5s ease;
+}
