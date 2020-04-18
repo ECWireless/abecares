@@ -29,6 +29,21 @@
     &__logo {
         width: 70%;
         height: 100%;
+
+        @include respond(tab-port) {
+            width: 15rem;
+            height: 6rem;
+        }
+
+        @include respond(phone) {
+            width: 12.5rem;
+            height: 5rem;
+        }
+
+        @include respond(small-phone) {
+            width: 10rem;
+            height: 4rem;
+        }
     }
 
     &__list {
