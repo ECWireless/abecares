@@ -36,9 +36,10 @@ export default class about extends Component {
         return (
             <div>
                 <Head>
+					<title>About | Abraham Home Care</title>
                     <link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
-                        <link rel="icon" href="/favicon.ico" />
-                        <link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+                    <link rel="icon" href="/favicon.ico" />
+                    <link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
                 </Head>
                 <main>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />

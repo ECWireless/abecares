@@ -35,6 +35,7 @@ export default class contact extends Component {
         return (
             <div>
             <Head>
+					<title>Contact | Abraham Home Care</title>
 					<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
             </Head>
             <main>

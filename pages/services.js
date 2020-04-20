@@ -36,7 +36,8 @@ export default class services extends Component {
         return (
             <div>
                 <Head>
-                        <link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+					<title>Services | Abraham Home Care</title>
+                    <link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
                 </Head>
                 <main>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
