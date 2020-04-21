@@ -67,7 +67,8 @@ export default class index extends Component {
 						<Hero />
 					</ScrollAnimation>
 					<Banner scrollToLocation={this.scrollToLocation} />
-
+					
+					<div ref={this.state.aboutRef} />
 					<ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
 						<About aboutRef={this.state.aboutRef} />
 					</ScrollAnimation>
