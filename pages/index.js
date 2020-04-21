@@ -58,7 +58,7 @@ export default class index extends Component {
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
 				</Head>
 
-				<main>
+				<main style={{overflow: 'hidden'}}>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header onSidebarToggle={this.onSidebarToggle} />
