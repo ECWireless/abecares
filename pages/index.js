@@ -1,7 +1,8 @@
-import React, { Component, createRef } from 'react'
+import React, { Component, createRef } from 'react';
 import Head from 'next/head';
 import '../sass/styles.scss';
 import "scroll-behavior-polyfill";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 // Sections
 import Sidebar from '../components/Sidebar';
@@ -21,6 +22,7 @@ export default class index extends Component {
 		sidebarToggle: 'sidebar__false',
 		backdropToggle: 'backdrop__false',
 		aboutRef: createRef(),
+		contactRef: createRef(),
 	}
 
 	scrollToLocation = () => {
@@ -53,18 +55,35 @@ export default class index extends Component {
 					<title>Abraham Home Care</title>
 					<link rel="icon" href="/favicon.ico" />
 					<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
 				</Head>
 
 				<main>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header onSidebarToggle={this.onSidebarToggle} />
-					<Hero />
+
+					<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+						<Hero />
+					</ScrollAnimation>
 					<Banner scrollToLocation={this.scrollToLocation} />
-					<About aboutRef={this.state.aboutRef} />
-					<Testimonial />
-					<Services />
-					<Contact />
+
+					<ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
+						<About aboutRef={this.state.aboutRef} />
+					</ScrollAnimation>
+
+					<ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
+						<Testimonial />
+					</ScrollAnimation>
+
+
+					<ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+						<Services />
+					</ScrollAnimation>
+
+					<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+						<Contact />
+					</ScrollAnimation>
 				</main>
 
 				<Footer />

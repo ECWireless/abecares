@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function About(props) {
+export default function About() {
     return (
-        <section className="container" id="about" ref={props.aboutRef}>
+        <section className="container" id="about">
             <div id="about__text-container">
                 <div id="hero__subtitle-container">
                         <p className="p-m" id="about__subtitle">About Us</p>

@@ -5,6 +5,10 @@
         grid-template-rows: 5rem 50rem 50rem;
     }
 
+    @include respond(small-phone) {
+        grid-template-rows: 5rem 55rem 50rem;
+    }
+
     &__subtitle {
         margin-right: 1.5rem;
     }
