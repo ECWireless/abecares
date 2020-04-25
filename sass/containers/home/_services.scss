@@ -143,7 +143,7 @@
         height: 8rem;
         width: 100%;
         z-index: 0;
-        background: linear-gradient(to left, #0A7338, #2DA63F);
+        background: $color-gradient-green;
     }
 
     &__service-bg-variant {
@@ -151,7 +151,7 @@
         height: 8rem;
         width: 100%;
         z-index: 0;
-        background: linear-gradient(to left, #2A558C, #29A7D9);
+        background: $color-gradient-blue;
     }
 
     &__service-header {

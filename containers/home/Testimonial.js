@@ -6,10 +6,10 @@ export default function Testimonial() {
             <div id="testimonial__text-container">
                 <div id="hero__subtitle-container">
                         <p className="p-m" id="testimonial__subtitle">Why Us</p>
-                        <div className="line" />
+                        <div className="line" style={{borderBottom: '4px solid #fff'}} />
                     </div>
 
-                    <h3 className="h3">"A very knowledgeable and compatible team, greatly improving the quality of my life."</h3>
+                    <h3 className="h3" style={{color: '#fff'}}>"A very knowledgeable and compatible team, greatly improving the quality of my life."</h3>
                     <p className="p-s" id="testimonial__paragraph">- John Smith</p>
                 </div>
             <div id="testimonial__photo-container">

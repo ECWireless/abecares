@@ -1,5 +1,7 @@
 #about {
-    grid-template-rows: 10rem 60rem;
+    grid-template-rows: 70rem;
+    z-index: 1;
+    background: $color-gradient-blue;
 
     @include respond(tab-port) {
         grid-template-rows: 5rem 50rem 50rem;
@@ -11,15 +13,17 @@
 
     &__subtitle {
         margin-right: 1.5rem;
+        color: #fff;
     }
 
     &__paragraph {
         margin-top: 1rem;
+        color: #fff;
     }
 
     &__text-container {
         grid-column: 2 / 8;
-        grid-row: 2 / -1;
+        grid-row: 1 / -1;
         align-self: center;
         justify-self: flex-start;
 
@@ -30,8 +34,9 @@
 
     &__photo-container {
         grid-column: 9 / 15;
-        grid-row: 2 / -1;
-        z-index: -2;
+        grid-row: 1 / 3;
+        align-self: center;
+        height: 85%;
         overflow: hidden;
         border-radius: 10px 0 0 10px;
 

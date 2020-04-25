@@ -7,6 +7,11 @@ $color-tertiary-black: #2d2d2d;
 $color-tertiary-grey: #707070;
 $color-tertiary-white: #F2F2F2;
 
+$color-gradient-green: linear-gradient(to left, #2DA63F, #0A7338);
+$color-gradient-blue: linear-gradient(to left, #2A558C, #29A7D9);
+$color-gradient-green-flip: linear-gradient(to right, #2DA63F, #0A7338);
+$color-gradient-blue-flip: linear-gradient(to right, #2A558C, #29A7D9);
+
 // Fonts
 $font-header: nassim-latin, sans-serif;
 $font-paragraph: mr-eaves-modern, sans-serif;
@@ -24,3 +29,4 @@ $border-radius: 10px;
 // Border Lines
 $border-box: 1px solid rgba(41, 167, 217, .3);
 $border-thin: 1px solid rgba(112, 112, 112, .2);
+$border-thin-green: 1px solid #2DA63F;

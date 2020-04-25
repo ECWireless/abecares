@@ -13,7 +13,8 @@ import Hero from '../containers/home/Hero';
 import Banner from '../containers/home/Banner';
 import About from '../containers/home/About';
 import Testimonial from '../containers/home/Testimonial';
-import Services from '../containers/home/Services';
+// import Services from '../containers/home/Services';
+import Services2 from '../containers/home/Services2';
 import Contact from '../containers/home/Contact';
 
 
@@ -63,28 +64,17 @@ export default class index extends Component {
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header onSidebarToggle={this.onSidebarToggle} />
 
-					<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-						<Hero />
-					</ScrollAnimation>
+					<Hero />
 					<Banner scrollToLocation={this.scrollToLocation} />
 					
 					<div ref={this.state.aboutRef} />
-					<ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
-						<About aboutRef={this.state.aboutRef} />
-					</ScrollAnimation>
+					<About aboutRef={this.state.aboutRef} />
 
-					<ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
-						<Testimonial />
-					</ScrollAnimation>
+					<Testimonial />
 
+					<Services2 />
 
-					<ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
-						<Services />
-					</ScrollAnimation>
-
-					<ScrollAnimation animateIn="fadeIn" animateOnce={true}>
-						<Contact />
-					</ScrollAnimation>
+					<Contact />
 				</main>
 
 				<Footer />

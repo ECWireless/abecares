@@ -5,12 +5,13 @@
 
     display: flex;
     flex-direction: column;
+    background: $color-gradient-blue;
 
     &__label {
         width: 60rem;
         margin: 2.5rem auto 1rem;
 
-        color: $color-tertiary-grey;
+        color: #fff !important;
         letter-spacing: 1px;
 
         @include respond(tab-port) {
@@ -33,11 +34,11 @@
         height: 5rem;
         padding: .5rem 2rem;
         border-radius: 5px;
-        border: $border-thin;
+        border: $border-thin-green;
         outline: none;
 
         font-family: $font-paragraph;
-        color: $color-primary-blue;
+        color: $color-primary-green !important;
         letter-spacing: 1px;
 
         transition: all .3s ease;
@@ -55,13 +56,13 @@
         }
 
         &:hover {
-            border: 1px solid $color-secondary-blue;
+            border: 1px solid $color-secondary-green;
         }
 
         &:active,
         &:focus {
-            border: 1px solid $color-secondary-blue;
-            border-left: 5px solid $color-secondary-blue;
+            border: 1px solid $color-secondary-green;
+            border-left: 5px solid $color-secondary-green;
         }
     }
 }
