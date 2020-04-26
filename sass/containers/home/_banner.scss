@@ -1,5 +1,6 @@
 #banner {
     background: $color-gradient-blue;
+    z-index: -2;
     
     @include respond(big-desktop) {
         grid-template-rows: 30rem;
@@ -28,6 +29,7 @@
 
         @include respond(tab-port) {
             grid-column: 1 / 9;
+            border-radius: 0;
         }
     }
 
@@ -66,48 +68,22 @@
         }
     }
 
-    &__arrow-container {
+    &__button {
         grid-column: 1 / 13;
         grid-row: 1 / -1;
         align-self: center;
         justify-self: flex-end;
         z-index: 2;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background: $color-secondary-green;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate(3rem, 0);
-    
-        transition: all .3s ease;
 
         @include respond(tab-port) {
             grid-column: 2 / 8;
             justify-self: center;
-            align-self: flex-start;
-            transform: translate(0, -3rem);
+            align-self: flex-start
         }
-    
-        &:hover {
-            cursor: pointer;
-            background: $color-secondary-blue;
-            transform: translate(3rem, 3px);
-
-            @include respond(tab-port) {
-                transform: translate(0, -2.7rem);
-            }
-        }
-    }
-
-    &__arrow {
-        width: 3rem;
-        height: 3rem;
-        fill: #fff;
-        margin-top: 5px;
     }
 }
+
+    
 
 .banner__text-container {
     grid-row: 1 / -1;

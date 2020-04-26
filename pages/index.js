@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react';
 import Head from 'next/head';
 import '../sass/styles.scss';
 import "scroll-behavior-polyfill";
-import ScrollAnimation from 'react-animate-on-scroll';
+// import ScrollAnimation from 'react-animate-on-scroll';
 
 // Sections
 import Sidebar from '../components/Sidebar';
@@ -59,7 +59,7 @@ export default class index extends Component {
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
 				</Head>
 
-				<main style={{overflow: 'hidden'}}>
+				<main>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header onSidebarToggle={this.onSidebarToggle} />
