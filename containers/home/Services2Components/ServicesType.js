@@ -5,7 +5,7 @@ export default function ServicesType(props) {
         <React.Fragment>
             {props.color === 'blue' ? (
                 <React.Fragment>
-                    <div style={{backgroundImage: 'url(/home-care-photo-3.jpg)'}} id="services2__photo" className={props.dynamicClass} />
+                    <div style={{backgroundImage: props.photo}} id="services2__photo" className={props.dynamicClass} />
                     <div id="services2__background" className={props.dynamicClass} />
                     <div id="services2__container" className={`${props.dynamicClass}-container`}>
                         <h3 className="h3" id="services2__sub-heading">{props.subheading}</h3>
@@ -16,7 +16,7 @@ export default function ServicesType(props) {
                 </React.Fragment>       
             ) : (
                 <React.Fragment>
-                    <div style={{backgroundImage: 'url(/home-care-photo-3.jpg)'}} id="services2__photo-alt" className={props.dynamicClass} />
+                    <div style={{backgroundImage: props.photo}} id="services2__photo-alt" className={props.dynamicClass} />
                     <div id="services2__background-alt" className={props.dynamicClass} />
                     <div id="services2__container-alt" className={`${props.dynamicClass}-container`}>
                         <h3 className="h3" id="services2__sub-heading">{props.subheading}</h3>

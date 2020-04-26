@@ -7,7 +7,7 @@ export default function Hero() {
             <div id="hero__white-bg" />
             <div id="hero__photo-container">
                 {/* <img id="hero__photo" src="/home-care-photo-1.jpg" alt="Home Care Photo"/> */}
-                <div style={{backgroundImage: 'url(/home-care-photo-1.jpg)'}} id="hero__photo" alt="Home Care Hero Photo" />
+                <div style={{backgroundImage: 'url(/new-photo-1.jpeg)'}} id="hero__photo" alt="Home Care Hero Photo" />
             </div>
 
             <div id="hero__text-container">

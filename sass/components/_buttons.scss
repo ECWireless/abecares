@@ -82,7 +82,7 @@
             grid-column: 2 / 8;
             justify-self: center;
             align-self: flex-start;
-            transform: translate(0, -3rem);
+            transform: translate(-3rem, -3rem);
         }
     
         &:hover {
@@ -91,7 +91,7 @@
             transform: translateY(3px);
 
             @include respond(tab-port) {
-                transform: translate(0, -2.7rem);
+                transform: translate(-3rem, -2.7rem);
             }
         }
     }

@@ -10,10 +10,19 @@ export default class Services2 extends Component {
         activeDot: 1,
     }
 
+    componentDidMount() {
+        this.onTimedSwitch();
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.carouselInterval);
+}
+
     onActivateDot = (number) => {
         this.setState({
             ...this.state,
             activeDot: number,
+            timerSet: false,
         })
     }
 
@@ -45,6 +54,12 @@ export default class Services2 extends Component {
         }
     }
 
+    onTimedSwitch() {
+        this.carouselInterval = setInterval(() => {
+            this.onArrowClick('right');
+        }, 5000);
+    }
+
     render() {
         return (
             <section className="container" id="services2">
@@ -68,20 +83,23 @@ export default class Services2 extends Component {
             </div>
 
             <ServiceType
-                color={'blue'}
-                subheading={'Personal Assistance'}
                 dynamicClass={this.state.activeDot == 1 ? 'fadeIn' : 'fadeOut'}
+                color={'blue'}
+                photo={'url(/new-photo-3.png)'}
+                subheading={'Personal Assistance'}
                 paragraph={'Standby Assistance with Morning and Evening Routines, Transfer Assistance, Bathing & Showering Assistance, Personal Hygiene Assistance, Help with Restroom Use, Assistance with Dressing, and Personal Appearance Care.'}
             />
             <ServiceType
                 dynamicClass={this.state.activeDot == 2 ? 'fadeIn' : 'fadeOut'}
                 color={'green'}
+                photo={'url(/home-care-photo-3.jpg)'}
                 subheading={'Specialized Care'}
                 paragraph={'Autism, Cerebral Palsy, MS, Quadraplegic Care, and Spinal Cord Injury Care'}
             />
             <ServiceType
                 dynamicClass={this.state.activeDot == 3 ? 'fadeIn' : 'fadeOut'}
                 color={'blue'}
+                photo={'url(/home-care-photo-1.jpg)'}
                 subheading={'Companionship'}
                 paragraph={'Friendly & Supportive, Conversation, Plan & Encourage Social Activities, Encourage Light Exercise, and Encourage Active Thinking'}
             />
