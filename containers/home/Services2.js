@@ -1,32 +1,91 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 // Components
 import ArrowButton from '../../components/ArrowButton';
+import ServiceType from './Services2Components/ServicesType';
 
-export default function Services2() {
-    return (
-        <section className="container" id="services2">
+export default class Services2 extends Component {
+
+    state = {
+        activeDot: 1,
+    }
+
+    onActivateDot = (number) => {
+        this.setState({
+            ...this.state,
+            activeDot: number,
+        })
+    }
+
+    onArrowClick = (direction) => {
+        if (direction === 'right') {
+            if (this.state.activeDot == 3) {
+                this.setState({
+                    ...this.state,
+                    activeDot: 1,
+                })
+            } else {
+                this.setState({
+                    ...this.state,
+                    activeDot: this.state.activeDot + 1,
+                })
+            }
+        } else if (direction === 'left') {
+            if (this.state.activeDot == 1) {
+                this.setState({
+                    ...this.state,
+                    activeDot: 3,
+                })
+            } else {
+                this.setState({
+                    ...this.state,
+                    activeDot: this.state.activeDot - 1,
+                })
+            }
+        }
+    }
+
+    render() {
+        return (
+            <section className="container" id="services2">
             <p className="p-m" id="services2__subtitle">Our Services</p>
             <div className="line" id="services2__line" />
             <h2 className="h2" id="services2__header">Home Care</h2>
             <p className="p-m" id="services2__paragraph">Abraham Home Care offers a variety of different services aimed at meeting the needs of clients of all ages.</p>
 
-            <div style={{backgroundImage: 'url(/home-care-photo-3.jpg)'}} id="services2__photo" />
-            <div id="services2__background" />
-            <div id="services2__left">
+            <div id="services2__left" onClick={this.onArrowClick.bind(this, 'left')}>
                 <ArrowButton />
             </div>
 
-            <div id="services2__right">
+            <div id="services2__right" onClick={this.onArrowClick.bind(this, 'right')}>
                 <ArrowButton />
             </div>
 
-            <div id="services2__container">
-                <h3 className="h3" id="services2__sub-heading">Personal Assistance</h3>
-                <div className="line line--white" id="services2__line" />
-                <p className="p-s" id="services2__sub-paragraph">Standby Assistance with Morning and Evening Routines, Transfer Assistance, Bathing & Showering Assistance, Personal Hygiene Assistance, Help with Restroom Use, Assistance with Dressing, and Personal Appearance Care.</p>
-                <button className="button button__m" id="services2__button">Learn More</button>
+            <div id="services2__dot-container">
+                <div id={this.state.activeDot == 1 ? 'services2__dot--active' : 'services2__dot'} onClick={this.onActivateDot.bind(this, 1)} />
+                <div id={this.state.activeDot == 2 ? 'services2__dot--active' : 'services2__dot'} onClick={this.onActivateDot.bind(this, 2)} />
+                <div id={this.state.activeDot == 3 ? 'services2__dot--active' : 'services2__dot'} onClick={this.onActivateDot.bind(this, 3)} />
             </div>
+
+            <ServiceType
+                color={'blue'}
+                subheading={'Personal Assistance'}
+                dynamicClass={this.state.activeDot == 1 ? 'fadeIn' : 'fadeOut'}
+                paragraph={'Standby Assistance with Morning and Evening Routines, Transfer Assistance, Bathing & Showering Assistance, Personal Hygiene Assistance, Help with Restroom Use, Assistance with Dressing, and Personal Appearance Care.'}
+            />
+            <ServiceType
+                dynamicClass={this.state.activeDot == 2 ? 'fadeIn' : 'fadeOut'}
+                color={'green'}
+                subheading={'Specialized Care'}
+                paragraph={'Autism, Cerebral Palsy, MS, Quadraplegic Care, and Spinal Cord Injury Care'}
+            />
+            <ServiceType
+                dynamicClass={this.state.activeDot == 3 ? 'fadeIn' : 'fadeOut'}
+                color={'blue'}
+                subheading={'Companionship'}
+                paragraph={'Friendly & Supportive, Conversation, Plan & Encourage Social Activities, Encourage Light Exercise, and Encourage Active Thinking'}
+            />
         </section>
-    )
+        )
+    }
 }

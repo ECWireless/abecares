@@ -74,11 +74,16 @@
         align-self: center;
         justify-self: flex-end;
         z-index: 2;
+        transform: translate(3rem, 0);
 
         @include respond(tab-port) {
             grid-column: 2 / 8;
             justify-self: center;
             align-self: flex-start
+        }
+
+        &:hover {
+            transform: translate(3rem, 3px);
         }
     }
 }
