@@ -68,7 +68,7 @@ export default class index extends Component {
 					<Banner scrollToLocation={this.scrollToLocation} />
 					
 					<div ref={this.state.aboutRef} />
-					<About aboutRef={this.state.aboutRef} />
+					<About />
 
 					<Testimonial />
 

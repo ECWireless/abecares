@@ -39,10 +39,12 @@
         height: 85%;
         overflow: hidden;
         border-radius: 10px 0 0 10px;
+        display: grid;
 
         @include respond(tab-port) {
             grid-column: 1 / -1;
             grid-row: 3 / 4;
+            border-radius: 0;
         }
     }
 
@@ -51,6 +53,24 @@
         width: 100%;
         background-position: center;
         background-size: cover;
+    }
+
+    &__video {
+        height: 100%;
+        width: auto;
+        margin-left: -25rem;
+
+        @include respond(tab-port) {
+            margin-left: 0;
+            height: auto;
+            width: 100%;
+        }
+
+        @include respond(phone) {
+            height: 100%;
+            width: auto;
+            margin-left: -15rem;
+        }
     }
 
     &__button {

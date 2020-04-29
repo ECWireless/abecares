@@ -17,10 +17,17 @@ export default function Hero() {
                 </div>
 
                 <h1 className="h1" style={{color: '#fff'}}>Your Need is Our Mission</h1>
+
                 <p className="p-m" id="hero__paragraph">By choosing Abraham Home Care, you or your loved ones will have the ability to continue the comfortable and independent lifestyle you’re accustomed to by utilizing patient care at home.</p>
-                <Link href="/contact">
-                    <button className="button button__l" id="hero__button">Book and Appointment</button>
-                </Link>
+                    
+                <div id="hero__buttons-container">
+                    <Link href="/contact">
+                        <button className="button button__l" id="hero__button">Book and Appointment</button>
+                    </Link>
+                    <a href="https://vimeo.com/386831702" target="_blank" rel="noopener noreferrer">
+                        <button className="button button__l-alt" id="hero__button-alt">Play Video</button>
+                    </a>
+                </div>
             </div>
         </section>
     )

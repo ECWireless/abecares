@@ -92,6 +92,11 @@
     }
 
     &__button {
+        @include respond(big-desktop) {
+            width: 22rem;
+            height: 6rem;
+        }
+
         margin-top: 1rem;
         width: 17rem;
         height: 5rem;
