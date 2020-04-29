@@ -19,7 +19,7 @@ export default function About() {
             <div id="about__photo-container">
                 {/* <img id="about__photo" src="/home-care-photo-2.jpg" alt="Home Care Photo"/> */}
                 {/* <div style={{backgroundImage: 'url(/home-care-photo-2.jpg)'}} id="about__photo" alt="About Photo" /> */}
-                <video id="about__video" poster="/home-care-photo-2.jpg" autoPlay loop muted>
+                <video id="about__video" autoPlay loop muted>
                     <source src="./AboutVideo.mp4"/>
                 </video>
             </div>
