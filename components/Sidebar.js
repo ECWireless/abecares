@@ -8,7 +8,7 @@ export default function Sidebar(props) {
     return (
         <div className={props.sidebarToggle} id="sidebar">
             <div id="sidebar__icon-item">
-                <CloseIcon toggle={props.onSidebarToggle} />
+                <CloseIcon color={'blue'} toggle={props.onSidebarToggle} />
             </div>
             <Link href="/">
                 <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle}>Home</p>
