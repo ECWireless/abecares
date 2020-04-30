@@ -1,13 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Components
+import CloseIcon from '../components/CloseIcon';
+
 export default function Sidebar(props) {
     return (
         <div className={props.sidebarToggle} id="sidebar">
             <div id="sidebar__icon-item">
-                <div className="" id="sidebar__close-container" onClick={props.onSidebarToggle}>
-                    <p className="p-m" id="sidebar__close-icon">&#10005;</p>
-                </div>
+                <CloseIcon toggle={props.onSidebarToggle} />
             </div>
             <Link href="/">
                 <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle}>Home</p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function Hero() {
+export default function Hero(props) {
     return (
         <section className="container" id="hero">
             <div id="hero__white-bg" />
@@ -24,9 +24,9 @@ export default function Hero() {
                     <Link href="/contact">
                         <button className="button button__l" id="hero__button">Book and Appointment</button>
                     </Link>
-                    <a href="https://vimeo.com/386831702" target="_blank" rel="noopener noreferrer">
+                    <div onClick={props.onModalToggle}>
                         <button className="button button__l-alt" id="hero__button-alt">Play Video</button>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>

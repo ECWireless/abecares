@@ -1,0 +1,113 @@
+.modal__true {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%) scale(1);
+
+    height: 80vh;
+    width: 90rem;
+    background: $color-gradient-blue;
+    border-radius: $border-radius;
+    box-shadow: $shadow-box;
+
+    opacity: 1;
+    transition: all .5s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+        height: 90vh;
+    }
+
+    @include respond(tab-port) {
+        width: 90vw;
+    }
+}
+
+.modal__false {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(.8);
+
+    height: 80vh;
+    width: 90rem;
+    background: $color-gradient-blue;
+    border-radius: $border-radius;
+    box-shadow: $shadow-box;
+
+    opacity: 0;
+    transition: all .5s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+        height: 90vh;
+    }
+
+    @include respond(tab-port) {
+        width: 90vw;
+    }
+}
+
+#modal {
+    &__close {
+        align-self: flex-end;
+        margin-right: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__video {
+        align-self: center;
+        margin-top: 5rem;
+        width: 640px;
+        height: 360px;
+
+        @include respond(tab-land) {
+            margin-top: 3rem;
+        }
+
+        @include respond(tab-port) {
+            width: 500px;
+            height: 281px;
+        }
+
+        @include respond(phone) {
+            width: 350px;
+            height: 197px;
+        }
+
+        @include respond(small-phone) {
+            width: 300px;
+            height: 169px;
+        }
+    }
+
+    &__buttons-container {
+        align-self: center;
+        margin-top: 5rem;
+
+        @include respond(tab-land) {
+            margin-top: 3rem;
+        }
+
+        @include respond(phone) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__button-1 {
+        margin-right: 4rem;
+
+        @include respond(phone) {
+            margin-top: 1rem;
+            margin-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+}

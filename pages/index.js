@@ -6,6 +6,7 @@ import "scroll-behavior-polyfill";
 
 // Sections
 import Sidebar from '../components/Sidebar';
+import Modal from '../components/Modal';
 import Backdrop from '../components/Backdrop';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -22,6 +23,7 @@ export default class index extends Component {
 	state = {
 		sidebarToggle: 'sidebar__false',
 		backdropToggle: 'backdrop__false',
+		modalToggle: 'modal__false',
 		aboutRef: createRef(),
 		contactRef: createRef(),
 	}
@@ -34,16 +36,38 @@ export default class index extends Component {
 	}
 
 	onSidebarToggle = () => {
-		if (this.state.sidebarToggle === 'sidebar__true') {
+		if (this.state.sidebarToggle === 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
 			this.setState({
 				...this.state,
 				sidebarToggle: 'sidebar__false',
 				backdropToggle: 'backdrop__false',
 			})
-		} else {
+		} else if (this.state.sidebarToggle !== 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
 			this.setState({
 				...this.state,
 				sidebarToggle: 'sidebar__true',
+				backdropToggle: 'backdrop__true',
+			})
+		} else {
+			this.setState({
+				...this.state,
+				backdropToggle: 'backdrop__false',
+				modalToggle: 'modal__false',
+			})
+		}
+	}
+
+	onModalToggle = () => {
+		if (this.state.modalToggle === 'modal__true') {
+			this.setState({
+				...this.state,
+				modalToggle: 'modal__false',
+				backdropToggle: 'backdrop__false',
+			})
+		} else {
+			this.setState({
+				...this.state,
+				modalToggle: 'modal__true',
 				backdropToggle: 'backdrop__true',
 			})
 		}
@@ -61,10 +85,11 @@ export default class index extends Component {
 
 				<main>
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
+					<Modal modalToggle={this.state.modalToggle} onModalToggle={this.onModalToggle} />
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header onSidebarToggle={this.onSidebarToggle} />
 
-					<Hero />
+					<Hero onModalToggle={this.onModalToggle} />
 					<Banner scrollToLocation={this.scrollToLocation} />
 					
 					<div ref={this.state.aboutRef} />

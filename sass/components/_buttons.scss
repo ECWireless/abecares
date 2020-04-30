@@ -36,6 +36,27 @@
         height: 5rem;
     }
 
+    &__m-alt {
+        @include respond(big-desktop) {
+            width: 29rem;
+            height: 7rem;
+        }
+
+        width: 15rem;
+        height: 5rem;
+
+
+        background: transparent;
+        border: 4px solid #fff;
+        color: #fff;
+
+        &:hover {
+            background: $color-secondary-blue;
+            border: 4px solid $color-secondary-blue;
+            color: #fff;
+        }
+    }
+
     &__l {
         @include respond(big-desktop) {
             width: 29rem;
