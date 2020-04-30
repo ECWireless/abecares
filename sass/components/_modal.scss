@@ -87,6 +87,33 @@
         }
     }
 
+    &__blank-video {
+        align-self: center;
+        margin-top: 5rem;
+        width: 640px;
+        height: 360px;
+        background: #fff;
+
+        @include respond(tab-land) {
+            margin-top: 3rem;
+        }
+
+        @include respond(tab-port) {
+            width: 500px;
+            height: 281px;
+        }
+
+        @include respond(phone) {
+            width: 350px;
+            height: 197px;
+        }
+
+        @include respond(small-phone) {
+            width: 300px;
+            height: 169px;
+        }
+    }
+
     &__buttons-container {
         align-self: center;
         margin-top: 5rem;

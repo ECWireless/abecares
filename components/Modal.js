@@ -21,11 +21,13 @@ export default class Modal extends React.Component {
             <div id="modal__close" onClick={this.props.onModalToggle}>
                 <CloseIcon />
             </div>
-            <iframe
+            {this.props.modalToggle === 'modal__true' ? <iframe
                 src={`https://player.vimeo.com/video/386831702${this.state.autoplayToggle}`}
                 id="modal__video" frameBorder="0"
                 allow="autoplay; fullscreen" allowFullScreen>
-            </iframe>
+            </iframe> 
+            : <div id="modal__blank-video" />
+            }
             <div id="modal__buttons-container">
                     <button className="button button__m" id="modal__button-1" onClick={this.onAutoplayTogge}>Play</button>
                     <button className="button button__m-alt" onClick={this.props.onModalToggle}>Close</button>
