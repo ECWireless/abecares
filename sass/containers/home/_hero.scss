@@ -6,7 +6,7 @@
     grid-template-rows: 70rem;
 
     @include respond(tab-port) {
-        grid-template-rows: 50rem 50rem;
+        grid-template-rows: 60rem 50rem;
     }
 
     &__white-bg {

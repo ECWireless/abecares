@@ -91,18 +91,14 @@ export default class index extends Component {
 
 					<Hero onModalToggle={this.onModalToggle} />
 					<Banner scrollToLocation={this.scrollToLocation} />
-					
 					<div ref={this.state.aboutRef} />
 					<About />
-
 					<Testimonial />
-
 					<Services2 />
-
 					<Contact />
-				</main>
 
-				<Footer />
+					<Footer />
+				</main>
 			</div>
 		)
 	}

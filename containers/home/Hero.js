@@ -18,7 +18,7 @@ export default function Hero(props) {
 
                 <h1 className="h1" style={{color: '#fff'}}>Your Need is Our Mission</h1>
 
-                <p className="p-m" id="hero__paragraph">By choosing Abraham Home Care, you or your loved ones will have the ability to continue the comfortable and independent lifestyle you’re accustomed to by utilizing patient care at home.</p>
+                <p className="p-m" id="hero__paragraph">Abraham Home Care isn't just a home health agency. We're a family of dedicated home health workers who want to ensure that you continue to lead an independent and comfortable lifestyle while providing you with top-rated patient care.</p>
                     
                 <div id="hero__buttons-container">
                     <Link href="/contact">

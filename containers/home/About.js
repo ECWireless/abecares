@@ -11,7 +11,8 @@ export default function About() {
                     </div>
 
                     <h2 className="h2" style={{color: '#fff'}}>Thorough in knowledge, diverse in practice</h2>
-                    <p className="p-s" id="about__paragraph">Our staff is thoroughly trained to work with patients with a wide range of diagnoses. These include Autism, Cerebral Palsy, Dementia, MS, Spinal cord injuries, and many other injuries that limit ones ability to  independently care for themselves.</p>
+                    <p className="p-s" id="about__paragraph">Abraham Home Care was founded in 2014 by owner Dwayne Jordan, who felt compelled to start his own business following an accident that left his 17-year-old nephew a quadripliegic. After a year of recuperating at the Children's Institute of Pittsburgh, his nephew was eventually sent home, where he was required 24-hour care. Dwayne noticed right away the effect of qualified, trustworthy, and compassionate home health aides on his nephew/s recovery. This experience inspired him to help others to receive similar quality home care and manage their day-to-day living with dignity and respect.</p>
+                    <p style={{marginTop: '3rem'}} className="p-s" id="about__paragraph">Currently, Abraham Home Care provides services to 30 patients and employs a team of over 50 direct care workers.</p>
                     <Link href="/about">
                         <button className="button button__m" id="about__button">Learn More</button>
                     </Link>

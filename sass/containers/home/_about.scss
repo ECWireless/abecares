@@ -1,14 +1,14 @@
 #about {
-    grid-template-rows: 70rem;
+    grid-template-rows: 80rem;
     z-index: 1;
     background: $color-gradient-blue;
 
     @include respond(tab-port) {
-        grid-template-rows: 5rem 50rem 50rem;
+        grid-template-rows: 5rem 70rem 50rem;
     }
 
     @include respond(small-phone) {
-        grid-template-rows: 5rem 55rem 50rem;
+        grid-template-rows: 5rem 85rem 50rem;
     }
 
     &__subtitle {

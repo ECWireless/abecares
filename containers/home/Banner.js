@@ -28,9 +28,9 @@ export default function Banner(props) {
             <div className="banner__text-container banner__text-container--3">
                 <h3 className="h3" id="banner__header">Services</h3>
                 <div className="line" id="banner__line" />
-                <p className="p-s">Personal Assistance</p>
-                <p className="p-s" id="banner__paragraph">Specialized Care</p>
-                <p className="p-s" id="banner__paragraph">Companionship</p>
+                <p className="p-s" id="banner__paragraph">Personal Assistance</p>
+                <p style={{marginTop: '1rem'}} className="p-s" id="banner__paragraph">Specialized Care</p>
+                <p style={{marginTop: '1rem'}} className="p-s" id="banner__paragraph">Companionship</p>
             </div>
             <div id="banner__button" onClick={props.scrollToLocation}>
                 <ArrowButton scrollToLocation={props.scrollToLocation} />
