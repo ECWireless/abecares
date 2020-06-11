@@ -11,7 +11,13 @@ export default function ServicesType(props) {
                         <h3 className="h3" id="services2__sub-heading">{props.subheading}</h3>
                         <div className="line line--white" id="services2__line" />
                         <p className="p-s" id="services2__sub-paragraph">{props.paragraph}</p>
-                        <button className="button button__m" id="services2__button">Learn More</button>
+                        <button
+                            className="button button__m"
+                            id="services2__button"
+                            onClick={props.scrollToLocation.bind(this, 'contact')}
+                        >
+                            Contact
+                        </button>
                     </div>    
                 </React.Fragment>       
             ) : (
@@ -22,7 +28,13 @@ export default function ServicesType(props) {
                         <h3 className="h3" id="services2__sub-heading">{props.subheading}</h3>
                         <div className="line line--white" id="services2__line" />
                         <p className="p-s" id="services2__sub-paragraph">{props.paragraph}</p>
-                        <button className="button button__m" id="services2__button">Learn More</button>
+                        <button
+                            className="button button__m"
+                            id="services2__button"
+                            onClick={props.scrollToLocation.bind(this, 'contact')}
+                        >
+                            Contact
+                        </button>
                     </div>    
                 </React.Fragment>  
             )} 

@@ -1,21 +1,14 @@
 import React from 'react';
-import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer(props) {
     return (
         <footer className="container" id="footer">
             <div id="footer__learn-container">
                 <h3 className="h3">Info</h3>
                 <div className="line" id="footer__line" />
-                <Link href="/about">
-                    <p className="p-s" id="footer__link">About</p>
-                </Link>
-                <Link href="/services">
-                    <p className="p-s" id="footer__link">Services</p>
-                </Link>
-                <Link href="/">
-                    <p className="p-s" id="footer__link">Application</p>
-                </Link>
+                <p className="p-s" id="footer__link" onClick={props.scrollToLocation.bind(this, 'about')}>About</p>
+                <p className="p-s" id="footer__link" onClick={props.scrollToLocation.bind(this, 'services')}>Services</p>
+                <p className="p-s" id="footer__link">Application</p>
             </div>
 
             <div id="footer__contact-container">

@@ -1,9 +1,8 @@
 import React from 'react'
 
-export default function Contact() {
+export default function Contact(props) {
     return (
-        <section className="container" id="contact">
-
+        <section className="container" id="contact" ref={props.contactRef}>
             <p id="contact__subtitle" className="p-m">Contact Us</p>
             <div id="contact__line" className="line" />
             <h2 id="contact__header" className="h2">How can we help?</h2>

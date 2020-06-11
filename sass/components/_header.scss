@@ -18,6 +18,10 @@
         width: 100%;
         display: flex;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         @include respond(tab-port) {
             grid-column: 1 / 5;
             grid-row: 1 / 2;
@@ -69,6 +73,7 @@
     
         &:hover {
             color: $color-secondary-blue;
+            cursor: pointer;
         }
     }
 

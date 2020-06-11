@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 export default function Hero(props) {
     return (
@@ -21,9 +20,7 @@ export default function Hero(props) {
                 <p className="p-m" id="hero__paragraph">Abraham Home Care isn't just a home health agency. We're a family of dedicated home health workers who want to ensure that you continue to lead an independent and comfortable lifestyle while providing you with top-rated patient care.</p>
                     
                 <div id="hero__buttons-container">
-                    <Link href="/contact">
-                        <button className="button button__l" id="hero__button">Book and Appointment</button>
-                    </Link>
+                    <button className="button button__l" id="hero__button" onClick={props.scrollToLocation.bind(this, 'contact')}>Book and Appointment</button>
                     <div onClick={props.onModalToggle}>
                         <button className="button button__l-alt" id="hero__button-alt">Play Video</button>
                     </div>

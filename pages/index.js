@@ -25,23 +25,64 @@ export default class index extends Component {
 		backdropToggle: 'backdrop__false',
 		modalToggle: 'modal__false',
 		aboutRef: createRef(),
+		testimonialsRef: createRef(),
+		servicesRef: createRef(),
 		contactRef: createRef(),
 	}
 
-	scrollToLocation = () => {
-		window.scroll({
-			top: this.state.aboutRef.current.offsetTop,
-			behavior: 'smooth',
-		});
+	scrollToLocation = (reference) => {
+		this.setState({
+			...this.state,
+			sidebarToggle: 'sidebar__false',
+			backdropToggle: 'backdrop__false',
+			modalToggle: 'modal__false',
+		})
+
+		switch(reference) {
+			case 'home':
+				window.scroll({
+					top: 0,
+					behavior: 'smooth',
+				});
+				break;
+			case 'about':
+				window.scroll({
+					top: this.state.aboutRef.current.offsetTop - 80,
+					behavior: 'smooth',
+				});
+				break;
+			case 'testimonials':
+				window.scroll({
+					top: this.state.testimonialsRef.current.offsetTop - 80,
+					behavior: 'smooth',
+				});
+				break;
+			case 'services':
+				window.scroll({
+					top: this.state.servicesRef.current.offsetTop - 80,
+					behavior: 'smooth',
+				});
+				break;
+			case 'contact':
+				window.scroll({
+					top: this.state.contactRef.current.offsetTop - 80,
+					behavior: 'smooth',
+				});
+				break;
+			default:
+				return;
+		}
+		
 	}
 
-	onSidebarToggle = () => {
+	onSidebarToggle = (reference) => {
 		if (this.state.sidebarToggle === 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
 			this.setState({
 				...this.state,
 				sidebarToggle: 'sidebar__false',
 				backdropToggle: 'backdrop__false',
 			})
+			this.scrollToLocation(reference);
 		} else if (this.state.sidebarToggle !== 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
 			this.setState({
 				...this.state,
@@ -87,17 +128,16 @@ export default class index extends Component {
 					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Modal modalToggle={this.state.modalToggle} onModalToggle={this.onModalToggle} />
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
-					<Header onSidebarToggle={this.onSidebarToggle} />
+					<Header scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
 
-					<Hero onModalToggle={this.onModalToggle} />
+					<Hero scrollToLocation={this.scrollToLocation} onModalToggle={this.onModalToggle} />
 					<Banner scrollToLocation={this.scrollToLocation} />
-					<div ref={this.state.aboutRef} />
-					<About />
-					<Testimonial />
-					<Services2 />
-					<Contact />
+					<About scrollToLocation={this.scrollToLocation} aboutRef={this.state.aboutRef} />
+					<Testimonial testimonialsRef={this.state.testimonialsRef} />
+					<Services2 scrollToLocation={this.scrollToLocation} servicesRef={this.state.servicesRef} />
+					<Contact contactRef={this.state.contactRef} />
 
-					<Footer />
+					<Footer scrollToLocation={this.scrollToLocation} />
 				</main>
 			</div>
 		)

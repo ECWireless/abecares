@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Testimonial() {
+export default function Testimonial(props) {
     return (
-        <section className="container" id="testimonial">
+        <section className="container" id="testimonial" ref={props.testimonialsRef}>
             <div id="testimonial__text-container">
                 <div id="hero__subtitle-container">
                         <p className="p-m" id="testimonial__subtitle">Why Us</p>
