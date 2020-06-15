@@ -26,7 +26,7 @@ export default class Contact extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('https://abecares-backend.herokuapp.com/send',{
+        fetch(process.env.EMAIL_SERVER_URL,{
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {
