@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 // Components
 import Snackbar from '../../components/Snackbar'
 
+const url = process.env.SERVER_URL
+
 export default class Contact extends Component {
     state = {
         name: '',
@@ -32,7 +34,7 @@ export default class Contact extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        fetch(process.env.SERVER_URL,{
+        fetch(url,{
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {

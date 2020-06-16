@@ -18,7 +18,6 @@ import Testimonial from '../containers/home/Testimonial';
 import Services2 from '../containers/home/Services2';
 import Contact from '../containers/home/Contact';
 
-
 export default class index extends Component {
 	state = {
 		sidebarToggle: 'sidebar__false',
