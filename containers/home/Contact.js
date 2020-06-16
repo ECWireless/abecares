@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 
+// Components
+import Snackbar from '../../components/Snackbar'
+
 export default class Contact extends Component {
     state = {
         name: '',
         email: '',
         phone: '',
         message: '',
+
+        submitted: false,
+        success: false,
     }
 
     onNameChange = (e) => {
@@ -26,7 +32,7 @@ export default class Contact extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        fetch('https://abecares-backend.herokuapp.com/send',{
+        fetch(process.env.SERVER_URL,{
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {
@@ -37,17 +43,22 @@ export default class Contact extends Component {
             (response) => (response.json())
         ).then((response)=>{
             if (response.status === 'success'){
-                alert("Message Sent."); 
-                this.resetForm()
+                this.resetForm();
+                this.setState({ submitted: true, success: true })
             } else if(response.status === 'fail'){
-                alert("Message failed to send.")
+                this.setState({ submitted: true, success: false })
             }
         })
+        .catch(() => this.setState({ submitted: true, success: false }))
+    }
+
+    onCloseSnackbar = () => {
+        this.setState({ submitted: false })
     }
 
     resetForm(){
         this.setState({name: '', email: '', phone: '', message: ''})
-     }
+    }
 
     render() {
         return (
@@ -79,6 +90,7 @@ export default class Contact extends Component {
                     />
 
                     <button type="submit" id="contact__button" className="button button__l">Send Your Message</button>
+                    { this.state.submitted && <Snackbar success={this.state.success} onCloseSnackbar={this.onCloseSnackbar} /> }
                 </form>
             </section>
         )

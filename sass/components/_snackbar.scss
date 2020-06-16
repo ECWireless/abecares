@@ -1,0 +1,64 @@
+#snackbar--success {
+    position: fixed;
+    bottom: 5rem;
+    left: 5rem;
+
+    background: #03d303;
+    height: 5rem;
+    width: 25rem;
+    border-radius: $border-radius;
+    box-shadow: $shadow-box-hover;
+    padding: 0 1rem 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    animation: snackbarFade .5s ease;
+}
+
+#snackbar--fail {
+    position: fixed;
+    bottom: 5rem;
+    left: 5rem;
+
+    background: #e90505;
+    height: 5rem;
+    width: 28rem;
+    border-radius: $border-radius;
+    box-shadow: $shadow-box-hover;
+    padding: 0 1rem 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    animation: snackbarFade .5s ease;
+}
+
+#snackbar__close-container {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-left: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .3s ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+#snackbar__close-icon {
+    color: #fff;
+    font-weight: bold;
+    padding-top: .5rem;
+}

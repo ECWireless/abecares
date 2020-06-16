@@ -3,6 +3,7 @@
 @import './mixins';
 
 // Components
+@import './components/animations';
 @import './components/backdrop';
 @import './components/buttons';
 @import './components/close-icon';
@@ -13,6 +14,7 @@
 @import './components/lines';
 @import './components/modal';
 @import './components/sidebar';
+@import './components/snackbar';
 @import './components/topography';
 
 // Pages
