@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 // Components
 import Snackbar from '../../components/Snackbar'
+import Spinner from '../../components/Spinner'
 
 export default class Contact extends Component {
     state = {
@@ -10,6 +11,7 @@ export default class Contact extends Component {
         phone: '',
         message: '',
 
+        loading: false,
         submitted: false,
         success: false,
     }
@@ -32,6 +34,7 @@ export default class Contact extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        this.setState({ loading: true })
         fetch('https://abecares-backend.herokuapp.com/send',{
             method: "POST",
             body: JSON.stringify(this.state),
@@ -44,9 +47,9 @@ export default class Contact extends Component {
         ).then((response)=>{
             if (response.status === 'success'){
                 this.resetForm();
-                this.setState({ submitted: true, success: true })
+                this.setState({ submitted: true, success: true, loading: false, })
             } else if(response.status === 'fail'){
-                this.setState({ submitted: true, success: false })
+                this.setState({ submitted: true, success: false, loading: false })
             }
         })
         .catch(() => this.setState({ submitted: true, success: false }))
@@ -89,7 +92,9 @@ export default class Contact extends Component {
                         value={this.state.message} onChange={this.onMessageChange.bind(this)}
                     />
 
-                    <button type="submit" id="contact__button" className="button button__l">Send Your Message</button>
+                    <button type="submit" id="contact__button" className="button button__l">
+                        {this.state.loading ? <Spinner /> : 'Send Your Message'}
+                    </button>
                     { this.state.submitted && <Snackbar success={this.state.success} onCloseSnackbar={this.onCloseSnackbar} /> }
                 </form>
             </section>
