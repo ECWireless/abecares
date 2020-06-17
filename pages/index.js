@@ -20,6 +20,7 @@ import Contact from '../containers/home/Contact';
 
 export default class index extends Component {
 	state = {
+		loaded: false,
 		sidebarToggle: 'sidebar__false',
 		backdropToggle: 'backdrop__false',
 		modalToggle: 'modal__false',
@@ -27,6 +28,10 @@ export default class index extends Component {
 		testimonialsRef: createRef(),
 		servicesRef: createRef(),
 		contactRef: createRef(),
+	}
+
+	componentDidMount() {
+		this.setState({ ...this.state, loaded: true })
 	}
 
 	scrollToLocation = (reference) => {
@@ -124,8 +129,12 @@ export default class index extends Component {
 				</Head>
 
 				<main>
-					<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
-					<Modal modalToggle={this.state.modalToggle} onModalToggle={this.onModalToggle} />
+					{this.state.loaded && (
+						<React.Fragment>
+							<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
+							<Modal modalToggle={this.state.modalToggle} onModalToggle={this.onModalToggle} />
+						</React.Fragment>
+					)}
 					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 					<Header scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
 

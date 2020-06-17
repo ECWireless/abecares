@@ -5,7 +5,7 @@
     z-index: 999;
     transform: translate(-50%, -50%) scale(1);
 
-    height: 80vh;
+    height: 60rem;
     width: 90rem;
     background: $color-gradient-blue;
     border-radius: $border-radius;
@@ -18,11 +18,12 @@
     flex-direction: column;
 
     @include respond(tab-land) {
-        height: 90vh;
+        height: 55rem;
     }
 
     @include respond(tab-port) {
         width: 90vw;
+        height: 50rem;
     }
 }
 
@@ -33,7 +34,7 @@
     z-index: -1;
     transform: translate(-50%, -50%) scale(.8);
 
-    height: 80vh;
+    height: 60rem;
     width: 90rem;
     background: $color-gradient-blue;
     border-radius: $border-radius;
@@ -46,11 +47,12 @@
     flex-direction: column;
 
     @include respond(tab-land) {
-        height: 90vh;
+        height: 55rem;
     }
 
     @include respond(tab-port) {
         width: 90vw;
+        height: 50rem;
     }
 }
 
@@ -63,13 +65,9 @@
 
     &__video {
         align-self: center;
-        margin-top: 5rem;
+        margin-top: 0rem;
         width: 640px;
         height: 360px;
-
-        @include respond(tab-land) {
-            margin-top: 3rem;
-        }
 
         @include respond(tab-port) {
             width: 500px;
@@ -89,7 +87,7 @@
 
     &__blank-video {
         align-self: center;
-        margin-top: 5rem;
+        margin-top: 0rem;
         width: 640px;
         height: 360px;
         background: #fff;
