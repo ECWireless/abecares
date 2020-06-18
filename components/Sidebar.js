@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 // Components
 import CloseIcon from '../components/CloseIcon';
@@ -13,7 +14,9 @@ export default function Sidebar(props) {
             <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle.bind(this, 'testimonials')}>Testimonials</p>
             <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle.bind(this, 'services')}>Services</p>
             <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle.bind(this, 'contact')}>Contact</p>
-            <p className="p-m" id="sidebar__item" onClick={props.onSidebarToggle.bind(this, 'home')}>Job Application</p>
+            <Link href="/application">
+            <   p className="p-m" id="sidebar__item">Job Application</p>
+            </Link>
         </div>
     )
 }

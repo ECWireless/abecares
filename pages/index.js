@@ -1,5 +1,6 @@
 import React, { Component, createRef } from 'react';
 import Head from 'next/head';
+import Router from 'next/router'
 import '../sass/styles.scss';
 import "scroll-behavior-polyfill";
 // import ScrollAnimation from 'react-animate-on-scroll';
@@ -32,11 +33,29 @@ export default class index extends Component {
 
 	componentDidMount() {
 		this.setState({ ...this.state, loaded: true })
+		const pathname = window.location.href.split('/', [4])
+		switch(pathname[3]) {
+			case '#about-us':
+				this.scrollToLocation('about')
+				break;
+			case '#testimonials':
+				this.scrollToLocation('testimonials')
+				break;
+			case '#our-services':
+				this.scrollToLocation('services')
+				break;
+			case '#contact-us':
+				this.scrollToLocation('contact')
+				break;
+			default:
+				return;
+		}
 	}
 
 	scrollToLocation = (reference) => {
 		this.setState({
 			...this.state,
+			loaded: true,
 			sidebarToggle: 'sidebar__false',
 			backdropToggle: 'backdrop__false',
 			modalToggle: 'modal__false',
@@ -48,35 +67,39 @@ export default class index extends Component {
 					top: 0,
 					behavior: 'smooth',
 				});
+				Router.replace('/')
 				break;
 			case 'about':
 				window.scroll({
 					top: this.state.aboutRef.current.offsetTop - 80,
 					behavior: 'smooth',
 				});
+				Router.replace('/#about-us')
 				break;
 			case 'testimonials':
 				window.scroll({
 					top: this.state.testimonialsRef.current.offsetTop - 80,
 					behavior: 'smooth',
 				});
+				Router.replace('/#testimonials')
 				break;
 			case 'services':
 				window.scroll({
 					top: this.state.servicesRef.current.offsetTop - 80,
 					behavior: 'smooth',
 				});
+				Router.replace('/#our-services')
 				break;
 			case 'contact':
 				window.scroll({
 					top: this.state.contactRef.current.offsetTop - 80,
 					behavior: 'smooth',
 				});
+				Router.replace('/#contact-us')
 				break;
 			default:
 				return;
 		}
-		
 	}
 
 	onSidebarToggle = (reference) => {
@@ -132,11 +155,11 @@ export default class index extends Component {
 					{this.state.loaded && (
 						<React.Fragment>
 							<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
+							<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
 							<Modal modalToggle={this.state.modalToggle} onModalToggle={this.onModalToggle} />
 						</React.Fragment>
 					)}
-					<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
-					<Header scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
+					<Header isHomePage={this.state.isHomePage} scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
 
 					<Hero scrollToLocation={this.scrollToLocation} onModalToggle={this.onModalToggle} />
 					<Banner scrollToLocation={this.scrollToLocation} />

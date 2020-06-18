@@ -57,7 +57,7 @@ export default class Services2 extends Component {
     onTimedSwitch() {
         this.carouselInterval = setInterval(() => {
             this.onArrowClick('right');
-        }, 5000);
+        }, 10000);
     }
 
     render() {

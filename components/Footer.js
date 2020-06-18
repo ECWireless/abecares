@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 export default function Footer(props) {
     return (
@@ -8,7 +9,9 @@ export default function Footer(props) {
                 <div className="line" id="footer__line" />
                 <p className="p-s" id="footer__link" onClick={props.scrollToLocation.bind(this, 'about')}>About</p>
                 <p className="p-s" id="footer__link" onClick={props.scrollToLocation.bind(this, 'services')}>Services</p>
-                <p className="p-s" id="footer__link">Application</p>
+                <Link href="/application">
+                    <p className="p-s" id="footer__link">Application</p>
+                </Link>
             </div>
 
             <div id="footer__contact-container">
