@@ -72,7 +72,7 @@ export default class Contact extends Component {
                 <p id="contact__paragraph" className="p-m">We respond within 24 hours!</p>
 
                 <form className="form" id="contact__form" onSubmit={this.onSubmit}>
-                    <label htmlFor="form__input-name" id="contact__label-name" className="form__label p-s">What is your Name?</label>
+                    <label htmlFor="contact__input-name" id="contact__label-name" className="form__label p-s">What is your Name?</label>
                     <input required type="text" id="contact__input-name" className="form__input p-m"
                         value={this.state.name} onChange={this.onNameChange.bind(this)}
                     />

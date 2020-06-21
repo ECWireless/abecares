@@ -55,6 +55,141 @@
             width: 25rem;
         }
 
+        &::placeholder {
+            color: $color-placeholder;
+        }
+
+        &:hover {
+            border: 1px solid $color-secondary-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-secondary-green;
+            border-left: 5px solid $color-secondary-green;
+        }
+    }
+
+    &__input-container {
+        width: 60rem;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    &__input-medium {
+        grid-column: 3 / 5;
+
+        width: 30rem;
+        height: 5rem;
+        padding: .5rem 2rem;
+        border-radius: 5px;
+        border: $border-thin-green;
+        outline: none;
+
+        font-family: $font-paragraph;
+        color: $color-primary-green !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 30rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+
+        &:hover {
+            border: 1px solid $color-secondary-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-secondary-green;
+            border-left: 5px solid $color-secondary-green;
+        }
+    }
+
+    &__input-small {
+        grid-column: 3 / 5;
+
+        width: 15rem;
+        height: 5rem;
+        padding: .5rem 2rem;
+        border-radius: 5px;
+        border: $border-thin-green;
+        outline: none;
+
+        font-family: $font-paragraph;
+        color: $color-primary-green !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 30rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+
+        &:hover {
+            border: 1px solid $color-secondary-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-secondary-green;
+            border-left: 5px solid $color-secondary-green;
+        }
+    }
+
+    &__checkbox {
+        grid-column: 3 / 5;
+
+        width: 2rem;
+        height: 2rem;
+        padding: .5rem 2rem;
+        border-radius: 5px;
+        border: $border-thin-green;
+        outline: none;
+
+        font-family: $font-paragraph;
+        color: $color-primary-green !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 30rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
+
         &:hover {
             border: 1px solid $color-secondary-green;
         }

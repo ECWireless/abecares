@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Head from 'next/head';
 import Router from 'next/router'
+import '../sass/styles.scss';
 
 // Components
+import ApplicationForm from '../components/ApplicationForm';
 import Backdrop from '../components/Backdrop';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -88,7 +90,13 @@ export default class application extends Component {
 						</React.Fragment>
 					)}
 					<Header scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
-						Application Page
+					<section className="container" id="application">
+						<p id="application__subtitle" className="p-m">Application</p>
+						<div id="application__line" className="line" />
+						<h2 id="application__header" className="h2">Apply for a position</h2>
+						<p id="application__paragraph" className="p-m"></p>
+						<ApplicationForm />
+					</section>
 					<Footer scrollToLocation={this.scrollToLocation} />
                 </main>
             </div>

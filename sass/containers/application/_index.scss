@@ -1,0 +1,40 @@
+#application {
+    @include respond(big-desktop) {
+        grid-template-rows: 12rem 5rem 4rem 1rem auto 10rem;
+    }
+
+    grid-template-rows: 12rem 5rem 4rem 1rem auto 10rem;
+
+    &__subtitle {
+        grid-row: 1 / 2;
+        grid-column: 2 / 14;
+        justify-self: center;
+        align-self: flex-end;
+        margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
+    }
+
+    &__line {
+        grid-row: 1 / 2;
+        grid-column: 2 / 14;
+        justify-self: center;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
+    }
+
+    &__header {
+        grid-row: 2 / 3;
+        grid-column: 2 / 14;
+        justify-self: center;
+        align-self: flex-end;
+
+        @include respond(tab-port) {
+            grid-column: 2 / 8;
+        }
+    }
+}
