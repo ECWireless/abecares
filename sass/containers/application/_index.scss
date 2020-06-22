@@ -1,6 +1,6 @@
 #application {
     @include respond(big-desktop) {
-        grid-template-rows: 12rem 5rem 4rem 1rem auto 10rem;
+        grid-template-rows: 16rem 5rem 6rem auto 10rem;
     }
 
     grid-template-rows: 12rem 5rem 4rem auto 10rem;

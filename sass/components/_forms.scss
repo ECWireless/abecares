@@ -206,4 +206,47 @@
             border-left: 5px solid $color-secondary-green;
         }
     }
+
+    &__textarea {
+        margin: 0 auto;
+
+        height: 20rem;
+        width: 60rem;
+        padding: 2rem;
+        border-radius: 5px;
+        border: $border-thin-green;
+        outline: none;
+
+        font-family: $font-paragraph;
+        color: $color-primary-green !important;
+        letter-spacing: 1px;
+
+        transition: all .3s ease;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 30rem;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+
+        &:hover {
+            border: 1px solid $color-secondary-green;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid $color-secondary-green;
+            border-left: 5px solid $color-secondary-green;
+        }
+    }
 }
