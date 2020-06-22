@@ -74,6 +74,19 @@
         width: 60rem;
         margin: 0 auto;
         display: flex;
+
+        @include respond(tab-port) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 30rem;
+            flex-wrap: wrap;
+        }
+
+        @include respond(small-phone) {
+            width: 25rem;
+        }
     }
 
     &__input-medium {
@@ -93,11 +106,11 @@
         transition: all .3s ease;
 
         @include respond(tab-port) {
-            width: 50rem;
+            width: 20rem;
         }
 
         @include respond(phone) {
-            width: 30rem;
+            width: 20rem;
         }
 
         @include respond(small-phone) {
@@ -136,11 +149,12 @@
         transition: all .3s ease;
 
         @include respond(tab-port) {
-            width: 50rem;
+            width: 15rem;
         }
 
         @include respond(phone) {
-            width: 30rem;
+            width: 20rem;
+            margin-left: 0 !important;
         }
 
         @include respond(small-phone) {
@@ -179,15 +193,7 @@
         transition: all .3s ease;
 
         @include respond(tab-port) {
-            width: 50rem;
-        }
-
-        @include respond(phone) {
-            width: 30rem;
-        }
-
-        @include respond(small-phone) {
-            width: 25rem;
+            grid-column: 1 / 2;
         }
 
         &:hover {
