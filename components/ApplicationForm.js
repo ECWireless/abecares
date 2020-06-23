@@ -43,6 +43,11 @@ export default class ApplicationForm extends Component {
         graduateSchoolGraduated: false,
 
         qualifications: '',
+        currentEmployer: '',
+        currentPosition: '',
+        currentSalary: '',
+        currentReasonLeaving: '',
+        currentEmploymentStartDate: '',
     }
 
     onNameChange = (e) => { this.setState({name: e.target.value}) }
@@ -72,6 +77,12 @@ export default class ApplicationForm extends Component {
     onGraduateSchoolGraduatedChange = () => { this.setState({graduateSchoolGraduated: !this.state.graduateSchoolGraduated}) }
 
     onQualificationsChange = (e) => { this.setState({qualifications: e.target.value}) }
+
+    onCurrentEmployerChange = (e) => { this.setState({currentEmployer: e.target.value}) }
+    onCurrentPositionChange = (e) => { this.setState({currentPosition: e.target.value}) }
+    onCurrentSalaryChange = (e) => { this.setState({currentSalary: e.target.value}) }
+    onCurrentReasonLeavingChange = (e) => { this.setState({currentReasonLeaving: e.target.value}) }
+    onCurrentEmploymentStartDateChange = (e) => { this.setState({currentEmploymentStartDate: e.target.value}) }
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -103,6 +114,12 @@ export default class ApplicationForm extends Component {
             Did you graduate?: ${this.state.graduateSchoolGraduated}
 
             Qualifications: ${this.state.qualifications}
+
+            Current Employer: ${this.state.currentEmployer}
+            Position: ${this.state.currentPosition}
+            Current Salary: ${this.state.currentSalary}
+            Current Reason Leaving: ${this.state.currentReasonLeaving}
+            Current Employment Start Date: ${this.state.currentEmploymentStartDate}
         `)
         // this.setState({ loading: true })
         // fetch('https://abecares-backend.herokuapp.com/send',{
@@ -279,8 +296,36 @@ export default class ApplicationForm extends Component {
                         <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Skills/Qualifications:</h3>
                         <label htmlFor="application__input-qualifications" className="form__label p-s">Which relevant certifications or qualifications do you have?</label>
                         <textarea required={this.state.required} type="text" id="application__input-qualifications" className="form__textarea p-m"
-                            value={this.state.qualifications} onChange={this.onQualificationsChange.bind(this)}
+                            style={{marginBottom: '6rem'}} value={this.state.qualifications} onChange={this.onQualificationsChange.bind(this)}
                         />
+                    </div>
+
+                    <div className="form" style={{marginTop: '4rem'}}>
+                        <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Current Employment:</h3>
+                        <label htmlFor="application__input-current-employer" className="form__label p-s">Current Employer</label>
+                        <input type="text" id="application__input-current-employer" className="form__input p-m"
+                            value={this.state.currentEmployer} onChange={this.onCurrentEmployerChange.bind(this)}
+                        />
+                        <label htmlFor="application__input-current-position" className="form__label p-s">Position</label>
+                        <input type="text" id="application__input-current-position" className="form__input p-m"
+                            value={this.state.currentPosition} onChange={this.onCurrentPositionChange.bind(this)}
+                        />
+                        <label htmlFor="application__input-current-salary" className="form__label p-s">Salary</label>
+                        <div className="form__input-container">
+                            <input type="text" id="application__input-current-salary" className="form__input-medium p-m"
+                                value={this.state.currentSalary} onChange={this.onCurrentSalaryChange.bind(this)}
+                            />
+                        </div>
+                        <label htmlFor="application__input-current-reason-leaving" className="form__label p-s">Reason for Leaving</label>
+                        <input type="text" id="application__input-current-reason-leaving" className="form__input p-m"
+                            value={this.state.currentReasonLeaving} onChange={this.onCurrentReasonLeavingChange.bind(this)}
+                        />
+                        <label htmlFor="application__input-current-employment-start-date" className="form__label p-s">Date You Can Start</label>
+                        <div className="form__input-container">
+                            <input type="date" id="application__input-current-employment-start-date" className="form__input-medium p-s" style={{marginTop: '1rem'}}
+                                value={this.state.currentEmploymentStartDate} onChange={this.onCurrentEmploymentStartDateChange.bind(this)}
+                            />
+                        </div>
 
                         <button style={{marginBottom: '5rem'}} type="submit" id="contact__button" className="button button__l">
                             Submit
