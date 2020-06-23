@@ -48,6 +48,8 @@ export default class ApplicationForm extends Component {
         currentSalary: '',
         currentReasonLeaving: '',
         currentEmploymentStartDate: '',
+        currentEmploymentContact: '',
+
     }
 
     onNameChange = (e) => { this.setState({name: e.target.value}) }
@@ -83,6 +85,15 @@ export default class ApplicationForm extends Component {
     onCurrentSalaryChange = (e) => { this.setState({currentSalary: e.target.value}) }
     onCurrentReasonLeavingChange = (e) => { this.setState({currentReasonLeaving: e.target.value}) }
     onCurrentEmploymentStartDateChange = (e) => { this.setState({currentEmploymentStartDate: e.target.value}) }
+    onCurrentEmploymentContactChange  = (e) => { this.setState({currentEmploymentContact: e}) }
+    
+    onPreviousEmployerChange1 = (e) => { this.setState({previousEmployer1: e.target.value}) }
+    onPreviousPositionChange1 = (e) => { this.setState({previousPosition1: e.target.value}) }
+    onPreviousSalaryChange1 = (e) => { this.setState({previousSalary1: e.target.value}) }
+    onPreviousReasonLeavingChange1 = (e) => { this.setState({previousReasonLeaving1: e.target.value}) }
+    onPreviousEmploymentStartDateChange1 = (e) => { this.setState({previousEmploymentStartDate1: e.target.value}) }
+    onPreviousEmploymentEndDateChange1 = (e) => { this.setState({previousEmploymentEndDate1: e.target.value}) }
+    onPreviousEmploymentContactChange1  = (e) => { this.setState({previousEmploymentContact1: e}) }
 
     onSubmit = (e) => {
         e.preventDefault();
@@ -120,6 +131,7 @@ export default class ApplicationForm extends Component {
             Current Salary: ${this.state.currentSalary}
             Current Reason Leaving: ${this.state.currentReasonLeaving}
             Current Employment Start Date: ${this.state.currentEmploymentStartDate}
+            Can we contact?: ${this.state.currentEmploymentContact}
         `)
         // this.setState({ loading: true })
         // fetch('https://abecares-backend.herokuapp.com/send',{
@@ -325,6 +337,82 @@ export default class ApplicationForm extends Component {
                             <input type="date" id="application__input-current-employment-start-date" className="form__input-medium p-s" style={{marginTop: '1rem'}}
                                 value={this.state.currentEmploymentStartDate} onChange={this.onCurrentEmploymentStartDateChange.bind(this)}
                             />
+                        </div>
+                        <p htmlFor="application__input-current-employment-contact" className="form__label p-s">May we contact?</p>
+                        <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '6rem'}}>
+                            <label className="p-s white">
+                                <input type="radio" id="application__input-current-employment-contact" className="form__checkbox p-m"
+                                    style={{marginBottom: '2rem'}} value="Yes" checked={this.state.currentEmploymentContact === 'Yes'}
+                                    onChange={this.onCurrentEmploymentContactChange.bind(this, 'Yes')}
+                                />
+                                <span style={{marginLeft: '1rem'}}>
+                                    Yes
+                                </span>
+                            </label>
+                            <label className="p-s white">
+                                <input type="radio" id="application__input-current-employment-contact" className="form__checkbox p-m"
+                                    value="No" checked={this.state.currentEmploymentContact === 'No'}
+                                    onChange={this.onCurrentEmploymentContactChange.bind(this, 'No')}
+                                />
+                                <span style={{marginLeft: '1rem'}}>
+                                    No
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="form" style={{marginTop: '4rem'}}>
+                    <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Previous Employment:</h3>
+                        <label htmlFor="application__input-pervious-employer-1" className="form__label p-s">Previous Employer</label>
+                        <input type="text" id="application__input-pervious-employer-1" className="form__input p-m"
+                            value={this.state.previousEmployer1} onChange={this.onPreviousEmployerChange1.bind(this)}
+                        />
+                        <label htmlFor="application__input-previous-position-1" className="form__label p-s">Position</label>
+                        <input type="text" id="application__input-previous-position-1" className="form__input p-m"
+                            value={this.state.previousPosition1} onChange={this.onPreviousPositionChange1.bind(this)}
+                        />
+                        <label htmlFor="application__input-previous-salary-1" className="form__label p-s">Salary</label>
+                        <div className="form__input-container">
+                            <input type="text" id="application__input-previous-salary-1" className="form__input-medium p-m"
+                                value={this.state.previousSalary1} onChange={this.onPreviousSalaryChange1.bind(this)}
+                            />
+                        </div>
+                        <label htmlFor="application__input-previous-reason-leaving-1" className="form__label p-s">Reason for Leaving</label>
+                        <input type="text" id="application__input-previous-reason-leaving-1" className="form__input p-m"
+                            value={this.state.previousReasonLeaving1} onChange={this.onPreviousReasonLeavingChange1.bind(this)}
+                        />
+                        <label htmlFor="application__input-previous-employment-start-date-1" className="form__label p-s">Start Date</label>
+                        <div className="form__input-container">
+                            <input type="date" id="application__input-previous-employment-start-date-1" className="form__input-medium p-s" style={{marginTop: '1rem'}}
+                                value={this.state.previousEmploymentStartDate1} onChange={this.onPreviousEmploymentStartDateChange1.bind(this)}
+                            />
+                        </div>
+                        <label htmlFor="application__input-previous-employment-end-date-1" className="form__label p-s">End Date</label>
+                        <div className="form__input-container">
+                            <input type="date" id="application__input-previous-employment-end-date-1" className="form__input-medium p-s" style={{marginTop: '1rem'}}
+                                value={this.state.previousEmploymentEndDate1} onChange={this.onPreviousEmploymentEndDateChange1.bind(this)}
+                            />
+                        </div>
+                        <p htmlFor="application__input-previous-employment-contact-1" className="form__label p-s">May we contact?</p>
+                        <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '6rem'}}>
+                            <label className="p-s white">
+                                <input type="radio" id="application__input-previous-employment-contact-1" className="form__checkbox p-m"
+                                    style={{marginBottom: '2rem'}} value="Yes" checked={this.state.previousEmploymentContact1 === 'Yes'}
+                                    onChange={this.onPreviousEmploymentContactChange1.bind(this, 'Yes')}
+                                />
+                                <span style={{marginLeft: '1rem'}}>
+                                    Yes
+                                </span>
+                            </label>
+                            <label className="p-s white">
+                                <input type="radio" id="application__input-current-employment-contact" className="form__checkbox p-m"
+                                    value="No" checked={this.state.previousEmploymentContact1 === 'No'}
+                                    onChange={this.onPreviousEmploymentContactChange1.bind(this, 'No')}
+                                />
+                                <span style={{marginLeft: '1rem'}}>
+                                    No
+                                </span>
+                            </label>
                         </div>
 
                         <button style={{marginBottom: '5rem'}} type="submit" id="contact__button" className="button button__l">
