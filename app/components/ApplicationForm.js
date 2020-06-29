@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 // Data
 import months from '../data/months.json'
@@ -10,6 +11,9 @@ import Spinner from './Spinner'
 
 export default class ApplicationForm extends Component {
     state = {
+        file: '',
+        fileName: 'Choose File',
+
         loading: false,
         submitted: false,
         success: false,
@@ -67,6 +71,7 @@ export default class ApplicationForm extends Component {
         previousEmploymentEndDate2: '',
         previousEmploymentContact2: '',
 
+        coverLetterPath: '',
     }
 
     onNameChange = (e) => { this.setState({name: e.target.value}) }
@@ -120,86 +125,64 @@ export default class ApplicationForm extends Component {
     onPreviousEmploymentEndDateChange2 = (e) => { this.setState({previousEmploymentEndDate2: e.target.value}) }
     onPreviousEmploymentContactChange2  = (e) => { this.setState({previousEmploymentContact2: e}) }
 
-    onSubmit = (e) => {
+    onUploadChange = e => { this.setState({ file: e.target.files[0], fileName: e.target.files[0].name }) }
+
+    onCoverLetterUpload = async e => {
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append('file', this.state.file)
+
+        try {
+            const res = await axios.post('https://abecares-backend.herokuapp.com/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+
+            const { fileName, filePath } =  res.data
+            console.log(fileName, filePath)
+            this.setState({ coverLetterPath: filePath })
+
+        } catch(err) {
+            if (err.response.status === 500) {
+                console.log('There was a problem with the server!')
+                console.log(err)
+            } else {
+                console.log(err.response.data.msg)
+            }
+        }
+    }
+
+    onSubmit = async e => {
         e.preventDefault();
-        console.log(`
-            Name: ${this.state.name}
-            Address 1: ${this.state.address1}
-            Address 2: ${this.state.address2}
-            City: ${this.state.city}
-            State: ${this.state.americanState}
-            Zip Code: ${this.state.zipCode}
-            Phone Number: ${this.state.phone}
-            Email Address: ${this.state.email}
-            Birth Month: ${this.state.birthMonth}
-            Birth Day: ${this.state.birthDay}
-            Birth Year: ${this.state.birthYear}
-            Is Citizen?: ${this.state.isCitizen}
-
-            Employment Desired: ${this.state.employmentDesired}
-            Start Date: ${this.state.startDate}
-            Salary Desired: ${this.state.salary}
-
-            High School: ${this.state.highSchool}
-            Did you graduate?: ${this.state.highSchoolGraduated}
-            College: ${this.state.college}
-            College Degree: ${this.state.collegeDegree}
-            Did you graduate?: ${this.state.collegeGraduated}
-            Graduate School: ${this.state.graduateSchool}
-            Graduate School Degree: ${this.state.graduateDegree}
-            Did you graduate?: ${this.state.graduateSchoolGraduated}
-
-            Qualifications: ${this.state.qualifications}
-
-            Current Employer: ${this.state.currentEmployer}
-            Position: ${this.state.currentPosition}
-            Current Salary: ${this.state.currentSalary}
-            Current Reason Leaving: ${this.state.currentReasonLeaving}
-            Current Employment Start Date: ${this.state.currentEmploymentStartDate}
-            Can we contact?: ${this.state.currentEmploymentContact}
-
-            Previous Employer 1: ${this.state.previousEmployer1}
-            Position 1: ${this.state.previousPosition1}
-            Previous Salary 1: ${this.state.previousSalary1}
-            Previous Reason Leaving 1: ${this.state.previousReasonLeaving1}
-            Previous Employment Start Date 1: ${this.state.previousEmploymentStartDate1}
-            Previous Employment End Date 1: ${this.state.previousEmploymentEndDate1}
-            Can we contact? 1: ${this.state.previousEmploymentContact1}
-
-            Previous Employer 2: ${this.state.previousEmployer2}
-            Position 2: ${this.state.previousPosition2}
-            Previous Salary 2: ${this.state.previousSalary2}
-            Previous Reason Leaving 2: ${this.state.previousReasonLeaving2}
-            Previous Employment Start Date 2: ${this.state.previousEmploymentStartDate2}
-            Previous Employment End Date 2: ${this.state.previousEmploymentEndDate2}
-            Can we contact? 2: ${this.state.previousEmploymentContact2}
-        `)
-        // this.setState({ loading: true })
-        // fetch('https://abecares-backend.herokuapp.com/send',{
-        //     method: "POST",
-        //     body: JSON.stringify(this.state),
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //     },
-        // }).then(
-        //     (response) => (response.json())
-        // ).then((response)=>{
-        //     if (response.status === 'success'){
-        //         this.resetForm();
-        //         this.setState({ submitted: true, success: true, loading: false, })
-        //     } else if(response.status === 'fail'){
-        //         this.setState({ submitted: true, success: false, loading: false })
-        //     }
-        // })
-        // .catch(() => this.setState({ submitted: true, success: false }))
+        
+        this.setState({ loading: true })
+        fetch('https://abecares-backend.herokuapp.com/application',{
+            method: "POST",
+            body: JSON.stringify(this.state),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }).then(
+            (response) => (response.json())
+        ).then((response)=>{
+            console.log(response.status)
+            if (response.status === 'success'){
+                this.resetForm();
+                this.setState({ submitted: true, success: true, loading: false, })
+            } else if(response.status === 'fail'){
+                this.setState({ submitted: true, success: false, loading: false })
+            }
+        })
+        .catch(() => this.setState({ submitted: true, success: false }))
     }
 
     onCloseSnackbar = () => {
         this.setState({ submitted: false })
     }
 
-    resetForm(){
+    resetForm() {
         // this.setState({name: '', email: '', phone: '', message: ''})
     }
     render() {
@@ -513,13 +496,19 @@ export default class ApplicationForm extends Component {
 
                 <div className="form" style={{marginTop: '4rem'}}>
                     <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Cover Letter & Resume (Optional):</h3>
-                    <label htmlFor="application__input-pervious-employer-1" className="form__label p-s">Cover Letter</label>
+                    <label htmlFor="application__input-cover-letter" className="form__label p-s" >Cover Letter ({this.state.fileName})</label>
                     <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '2rem'}}>
-                        <input type="file" id="application__input-cover-letter" className="white" />
+                        <input type="file" id="application__input-cover-letter" className="white"
+                            accept=".pdf,.pages,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            onChange={this.onUploadChange}
+                        />
                     </div>
-                    <label htmlFor="application__input-pervious-employer-1" className="form__label p-s">Resume</label>
+                    <button className="button button__m" onClick={this.onCoverLetterUpload}>Upload Files</button>
+                    <label htmlFor="application__input-resume" className="form__label p-s">Resume</label>
                     <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '6rem'}}>
-                        <input type="file" id="application__input-cover-letter" className="white" />
+                        <input type="file" id="application__input-resume" className="white"
+                            accept=".pdf,.pages,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        />
                     </div>
                 </div>
 
