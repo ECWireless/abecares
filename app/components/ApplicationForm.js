@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+
+import client from '../client'
 
 // Data
 import months from '../data/months.json'
@@ -127,30 +128,24 @@ export default class ApplicationForm extends Component {
 
     onUploadChange = e => { this.setState({ file: e.target.files[0], fileName: e.target.files[0].name }) }
 
-    onCoverLetterUpload = async e => {
-        e.preventDefault()
-        const formData = new FormData()
-        formData.append('file', this.state.file)
+    onCoverLetterUpload = e => {
+        e.preventDefault();
 
-        try {
-            const res = await axios.post('https://abecares-backend.herokuapp.com/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
+        const file = new File([this.state.file], 'coverletter.pdf', {type: 'application/pdf'})
+        // Upload it
+        // client.assets
+        // .upload('file', file)
+        // .then(document => {
+        //     console.log('The file was uploaded!', document)
+        // })
+        // .catch(error => {
+        //     console.error('Upload failed:', error.message)
+        // })
 
-            const { fileName, filePath } =  res.data
-            console.log(fileName, filePath)
-            this.setState({ coverLetterPath: filePath })
-
-        } catch(err) {
-            if (err.response.status === 500) {
-                console.log('There was a problem with the server!')
-                console.log(err)
-            } else {
-                console.log(err.response.data.msg)
-            }
-        }
+        // client.delete('file-dd3694f178c1b8f0fc588b22487ec7e6912b30ab-pdf')
+        // .then(result => {
+        //     console.log('deleted image asset', result)
+        // })
     }
 
     onSubmit = async e => {

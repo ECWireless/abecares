@@ -21,6 +21,7 @@ import Contact from '../containers/home/Contact';
 
 export default class index extends Component {
 	state = {
+		data: [],
 		loaded: false,
 		sidebarToggle: 'sidebar__false',
 		backdropToggle: 'backdrop__false',
@@ -161,7 +162,7 @@ export default class index extends Component {
 					)}
 					<Header isHomePage={this.state.isHomePage} scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
 
-					<Hero scrollToLocation={this.scrollToLocation} onModalToggle={this.onModalToggle} />
+					<Hero data={this.state.data[0]} scrollToLocation={this.scrollToLocation} onModalToggle={this.onModalToggle} />
 					<Banner scrollToLocation={this.scrollToLocation} />
 					<About scrollToLocation={this.scrollToLocation} aboutRef={this.state.aboutRef} />
 					<Testimonial testimonialsRef={this.state.testimonialsRef} />

@@ -18,6 +18,26 @@ export default {
       }
     },
     {
+      name: 'heading',
+      title: 'Heading',
+      type: 'string'
+    },
+    {
+      name: 'subheading',
+      title: 'Subheading',
+      type: 'string'
+    },
+    {
+      name: 'paragraph1',
+      title: 'Paragraph 1',
+      type: 'string'
+    },
+    {
+      name: 'paragraph2',
+      title: 'Paragraph 2',
+      type: 'string'
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
