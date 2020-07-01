@@ -10,5 +10,8 @@ module.exports = withSass({
     }
 
     return config
-  }
+  },
+  env: {
+    SANITY_TOKEN: process.env.SANITY_TOKEN,
+  },
 })
