@@ -176,7 +176,7 @@ export default class ApplicationForm extends Component {
         client.assets
         .upload('file', file)
         .then(document => {
-            console.log('Resume was uploaded!', document.url)
+            console.log('Resume was uploaded!')
             this.setState({ ...this.state, resumeId: document._id, resumeURL: document.url, resumeStatus: true, resumePending: false, attachments: true })
         })
         .catch(error => {
@@ -194,7 +194,6 @@ export default class ApplicationForm extends Component {
     // SUBMIT
     onSubmit = async e => {
         e.preventDefault();
-        console.log(this.state.resumeURL)
         
         this.setState({ loading: true })
         fetch('https://abecares-backend.herokuapp.com/application',{
@@ -259,7 +258,7 @@ export default class ApplicationForm extends Component {
                         <input required={this.state.required} type="text" id="application__input-address-1" className="form__input p-m"
                             placeholder="Street Address" value={this.state.address1} onChange={this.onAddress1Change.bind(this)}
                         />
-                        <input required={this.state.required} type="text" id="application__input-address-2" className="form__input p-m" style={{marginTop: '1rem'}}
+                        <input type="text" id="application__input-address-2" className="form__input p-m" style={{marginTop: '1rem'}}
                             placeholder="Apt, unit, etc." value={this.state.address2} onChange={this.onAddress2Change.bind(this)}
                         />
                         <div className="form__input-container">
