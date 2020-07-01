@@ -1,3 +1,3 @@
 export default async function getStaticProps() {
-    return process.env.SANITY_TOKEN
+    return await process.env.SANITY_TOKEN
 }
