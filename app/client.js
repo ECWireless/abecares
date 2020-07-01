@@ -1,6 +1,5 @@
 // client.js
 import sanityClient from '@sanity/client'
-import myToken from './config'
 
 export default sanityClient({
     projectId: 'alezxehy', // you can find this in sanity.json
