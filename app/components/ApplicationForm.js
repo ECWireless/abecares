@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// Sanity Client
 import client from '../client'
 
 // Data
@@ -10,71 +11,84 @@ import states from '../data/states.json'
 import Snackbar from './Snackbar'
 import Spinner from './Spinner'
 
+const originalState = {
+    loading: false,
+    submitted: false,
+    success: false,
+    required: true,
+
+    // form state
+    name: '',
+    address1: '',
+    address2: '',
+    city: '',
+    americanState: '',
+    zipCode: '',
+    phone: '',
+    email: '',
+    birthMonth: '',
+    birthDay: '',
+    birthYear: '',
+    isCitizen: false,
+
+    employmentDesired: 'Part-Time',
+    startDate: '',
+    salary: '',
+
+    highSchool: '',
+    highSchoolGraduated: false,
+    college: '',
+    collegeDegree: '',
+    collegeGraduated: false,
+    graduateSchool: '',
+    graduateDegree: '',
+    graduateSchoolGraduated: false,
+
+    qualifications: '',
+
+    currentEmployer: '',
+    currentPosition: '',
+    currentSalary: '',
+    currentReasonLeaving: '',
+    currentEmploymentStartDate: '',
+    currentEmploymentContact: '',
+
+    previousEmployer1: '',
+    previousPosition1: '',
+    previousSalary1: '',
+    previousReasonLeaving1: '',
+    previousEmploymentStartDate1: '',
+    previousEmploymentEndDate1: '',
+    previousEmploymentContact1: '',
+
+    previousEmployer2: '',
+    previousPosition2: '',
+    previousSalary2: '',
+    previousReasonLeaving2: '',
+    previousEmploymentStartDate2: '',
+    previousEmploymentEndDate2: '',
+    previousEmploymentContact2: '',
+
+    // Uploads
+    coverLetterFile: '',
+    coverLetterFileName: '',
+    coverLetterStatus: false,
+    coverLetterPending: false,
+    coverLetterURL: '',
+    coverLetterId: '',
+
+    resumeFile: '',
+    resumeFileName: '',
+    resumeStatus: false,
+    resumePending: false,
+    resumeURL: '',
+    resumeId: '',
+}
+
 export default class ApplicationForm extends Component {
-    state = {
-        file: '',
-        fileName: 'Choose File',
+    state = originalState
 
-        loading: false,
-        submitted: false,
-        success: false,
-        required: false,
-
-        // form state
-        name: '',
-        address1: '',
-        address2: '',
-        city: '',
-        americanState: '',
-        zipCode: '',
-        phone: '',
-        email: '',
-        birthMonth: '',
-        birthDay: '',
-        birthYear: '',
-        isCitizen: false,
-
-        employmentDesired: '',
-        startDate: '',
-        salary: '',
-
-        highSchool: '',
-        highSchoolGraduated: false,
-        college: '',
-        collegeDegree: '',
-        collegeGraduated: false,
-        graduateSchool: '',
-        graduateDegree: '',
-        graduateSchoolGraduated: false,
-
-        qualifications: '',
-
-        currentEmployer: '',
-        currentPosition: '',
-        currentSalary: '',
-        currentReasonLeaving: '',
-        currentEmploymentStartDate: '',
-        currentEmploymentContact: '',
-
-        previousEmployer1: '',
-        previousPosition1: '',
-        previousSalary1: '',
-        previousReasonLeaving1: '',
-        previousEmploymentStartDate1: '',
-        previousEmploymentEndDate1: '',
-        previousEmploymentContact1: '',
-
-        previousEmployer2: '',
-        previousPosition2: '',
-        previousSalary2: '',
-        previousReasonLeaving2: '',
-        previousEmploymentStartDate2: '',
-        previousEmploymentEndDate2: '',
-        previousEmploymentContact2: '',
-
-        coverLetterPath: '',
-    }
-
+    // METHODS
     onNameChange = (e) => { this.setState({name: e.target.value}) }
     onAddress1Change = (e) => { this.setState({address1: e.target.value}) }
     onAddress2Change = (e) => { this.setState({address2: e.target.value}) }
@@ -126,30 +140,61 @@ export default class ApplicationForm extends Component {
     onPreviousEmploymentEndDateChange2 = (e) => { this.setState({previousEmploymentEndDate2: e.target.value}) }
     onPreviousEmploymentContactChange2  = (e) => { this.setState({previousEmploymentContact2: e}) }
 
-    onUploadChange = e => { this.setState({ file: e.target.files[0], fileName: e.target.files[0].name }) }
+    // UPLOADS
+    onCoverLetterChange = e => { this.setState({ coverLetterFile: e.target.files[0], coverLetterFileName: e.target.files[0].name}) }
 
     onCoverLetterUpload = e => {
         e.preventDefault();
-
-        const file = new File([this.state.file], 'coverletter.pdf', {type: 'application/pdf'})
+        this.setState({ ...this.state, coverLetterStatus: false, coverLetterPending: true})
+        const file = new File([this.state.coverLetterFile], this.state.coverLetterFileName, {type: 'application/pdf'})
         // Upload it
-        // client.assets
-        // .upload('file', file)
-        // .then(document => {
-        //     console.log('The file was uploaded!', document)
-        // })
-        // .catch(error => {
-        //     console.error('Upload failed:', error.message)
-        // })
-
-        // client.delete('file-dd3694f178c1b8f0fc588b22487ec7e6912b30ab-pdf')
-        // .then(result => {
-        //     console.log('deleted image asset', result)
-        // })
+        client.assets
+        .upload('file', file)
+        .then(document => {
+            console.log('Cover Letter was uploaded!')
+            this.setState({ ...this.state, coverLetterId: document._id, coverLetterURL: document.url, coverLetterStatus: true, coverLetterPending: false,attachments: true })
+        })
+        .catch(error => {
+            console.error('Upload failed:', error.message)
+        })
     }
 
+    onCoverLetterDelete = () => {
+        client.delete(this.state.coverLetterId)
+        .then(result => {
+            console.log('deleted cover letter', result)
+        })
+    }
+
+    onResumeChange = e => { this.setState({ resumeFile: e.target.files[0], resumeFileName: e.target.files[0].name}) }
+
+    onResumeUpload = e => {
+        e.preventDefault();
+        this.setState({ ...this.state, resumeStatus: false, resumePending: true, })
+        const file = new File([this.state.resumeFile], this.state.resumeFileName, {type: 'application/pdf'})
+        // Upload it
+        client.assets
+        .upload('file', file)
+        .then(document => {
+            console.log('Resume was uploaded!', document.url)
+            this.setState({ ...this.state, resumeId: document._id, resumeURL: document.url, resumeStatus: true, resumePending: false, attachments: true })
+        })
+        .catch(error => {
+            console.error('Upload failed:', error.message)
+        })
+    }
+
+    onResumeDelete = () => {
+        client.delete(this.state.resumeId)
+        .then(result => {
+            console.log('deleted resume', result)
+        })
+    }
+
+    // SUBMIT
     onSubmit = async e => {
         e.preventDefault();
+        console.log(this.state.resumeURL)
         
         this.setState({ loading: true })
         fetch('https://abecares-backend.herokuapp.com/application',{
@@ -164,9 +209,17 @@ export default class ApplicationForm extends Component {
         ).then((response)=>{
             console.log(response.status)
             if (response.status === 'success'){
+                if (this.state.coverLetterURL !== '') {
+                    this.onCoverLetterDelete();
+                }
+
+                if (this.state.resumeURL !== '') {
+                    this.onResumeDelete();
+                }
                 this.resetForm();
                 this.setState({ submitted: true, success: true, loading: false, })
             } else if(response.status === 'fail'){
+                console.log('test')
                 this.setState({ submitted: true, success: false, loading: false })
             }
         })
@@ -178,7 +231,7 @@ export default class ApplicationForm extends Component {
     }
 
     resetForm() {
-        // this.setState({name: '', email: '', phone: '', message: ''})
+        this.setState(originalState)
     }
     render() {
         let days = [];
@@ -284,12 +337,12 @@ export default class ApplicationForm extends Component {
                     <div className="form" style={{marginTop: '4rem'}}>
                         <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Education:</h3>
                         <label htmlFor="application__input-high-school" className="form__label p-s">High School</label>
-                        <input required={this.state.required} type="text" id="application__input-high-school" className="form__input p-m"
+                        <input type="text" id="application__input-high-school" className="form__input p-m"
                             value={this.state.highSchool} onChange={this.onHighSchoolChange.bind(this)}
                         />
                         <label htmlFor="application__input-high-school-graduated" className="form__label p-s">Did you graduate?</label>
                         <div className="form__input-container">
-                            <input required={this.state.required} type="checkbox" id="application__input-high-school-graduated" className="form__checkbox p-m"
+                            <input type="checkbox" id="application__input-high-school-graduated" className="form__checkbox p-m"
                                 value={this.state.highSchoolGraduated} onChange={this.onHighSchoolGraduatedChange}
                             />
                         </div>
@@ -351,7 +404,7 @@ export default class ApplicationForm extends Component {
                         <input type="text" id="application__input-current-reason-leaving" className="form__input p-m"
                             value={this.state.currentReasonLeaving} onChange={this.onCurrentReasonLeavingChange.bind(this)}
                         />
-                        <label htmlFor="application__input-current-employment-start-date" className="form__label p-s">Date You Can Start</label>
+                        <label htmlFor="application__input-current-employment-start-date" className="form__label p-s">Start Date</label>
                         <div className="form__input-container">
                             <input type="date" id="application__input-current-employment-start-date" className="form__input-medium p-s" style={{marginTop: '1rem'}}
                                 value={this.state.currentEmploymentStartDate} onChange={this.onCurrentEmploymentStartDateChange.bind(this)}
@@ -491,20 +544,26 @@ export default class ApplicationForm extends Component {
 
                 <div className="form" style={{marginTop: '4rem'}}>
                     <h3 style={{textAlign: 'center', marginTop: '6rem'}} className="h3 white">Cover Letter & Resume (Optional):</h3>
-                    <label htmlFor="application__input-cover-letter" className="form__label p-s" >Cover Letter ({this.state.fileName})</label>
+                    <label htmlFor="application__input-cover-letter" className="form__label p-s" >Cover Letter {this.state.fileName}</label>
                     <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '2rem'}}>
                         <input type="file" id="application__input-cover-letter" className="white"
                             accept=".pdf,.pages,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                            onChange={this.onUploadChange}
+                            onChange={this.onCoverLetterChange}
                         />
                     </div>
-                    <button className="button button__m" onClick={this.onCoverLetterUpload}>Upload Files</button>
+                    {!this.state.coverLetterStatus ? <button className="button button__m" onClick={this.onCoverLetterUpload}>
+                        {this.state.coverLetterPending ? <Spinner /> : 'Upload File'}
+                    </button> : null}
                     <label htmlFor="application__input-resume" className="form__label p-s">Resume</label>
-                    <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '6rem'}}>
+                    <div className="form__input-container" style={{flexDirection: 'column', marginBottom: '2rem'}}>
                         <input type="file" id="application__input-resume" className="white"
                             accept=".pdf,.pages,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            onChange={this.onResumeChange}
                         />
                     </div>
+                    {!this.state.resumeStatus ? <button style={{marginBottom: '6rem'}} className="button button__m" onClick={this.onResumeUpload}>
+                        {this.state.resumePending ? <Spinner /> : 'Upload File'}
+                    </button> : null}
                 </div>
 
                 <div className="form" style={{marginTop: '4rem'}}>
@@ -514,7 +573,7 @@ export default class ApplicationForm extends Component {
                     <p className="form__label p-s">I also understand and agree that the terms and conditions of my employment may be changed, with or without cause, and with or without notice, at any time by the company.</p>
 
                     <button style={{marginBottom: '5rem'}} type="submit" id="contact__button" className="button button__l">
-                        Submit
+                        {this.state.loading ? <Spinner /> : 'Submit'}
                     </button>
                 </div>
 
