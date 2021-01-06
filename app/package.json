@@ -10,7 +10,7 @@
   "dependencies": {
     "@sanity/client": "^1.149.16",
     "@zeit/next-sass": "^1.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "fs": "0.0.1-security",
     "next": "^9.4.4",
     "node-sass": "^4.14.1",
