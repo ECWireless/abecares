@@ -14,7 +14,7 @@ export default function Testimonial(props) {
                 </div>
             <div id="testimonial__photo-container">
                 {/* <img id="testimonial__photo" src="/home-care-photo-3.jpg" alt="Home Care Photo"/> */}
-                <div style={{backgroundImage: 'url(/new-photo-2.jpeg)'}} id="testimonial__photo" alt="Testimonial Photo" />
+                <div style={{backgroundImage: 'url(/new-photo-2.jpg)'}} id="testimonial__photo" alt="Testimonial Photo" />
             </div>
         </section>
     )

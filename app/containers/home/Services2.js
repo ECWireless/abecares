@@ -86,7 +86,7 @@ export default class Services2 extends Component {
                     scrollToLocation={this.props.scrollToLocation}
                     dynamicClass={this.state.activeDot == 1 ? 'fadeIn' : 'fadeOut'}
                     color={'blue'}
-                    photo={'url(/new-photo-3.png)'}
+                    photo={'url(/new-photo-3.jpg)'}
                     subheading={'Personal Assistance'}
                     paragraph={'Standby Assistance with Morning and Evening Routines, Transfer Assistance, Bathing & Showering Assistance, Personal Hygiene Assistance, Help with Restroom Use, Assistance with Dressing, and Personal Appearance Care.'}
                 />
@@ -94,7 +94,7 @@ export default class Services2 extends Component {
                     scrollToLocation={this.props.scrollToLocation}
                     dynamicClass={this.state.activeDot == 2 ? 'fadeIn' : 'fadeOut'}
                     color={'green'}
-                    photo={'url(/home-care-photo-3.jpg)'}
+                    photo={'url(/new-photo-4.jpg)'}
                     subheading={'Specialized Care'}
                     paragraph={'Autism, Cerebral Palsy, MS, Quadraplegic Care, and Spinal Cord Injury Care'}
                 />
@@ -102,7 +102,7 @@ export default class Services2 extends Component {
                     scrollToLocation={this.props.scrollToLocation}
                     dynamicClass={this.state.activeDot == 3 ? 'fadeIn' : 'fadeOut'}
                     color={'blue'}
-                    photo={'url(/home-care-photo-1.jpg)'}
+                    photo={'url(/new-photo-5.jpg)'}
                     subheading={'Companionship'}
                     paragraph={'Friendly & Supportive, Conversation, Plan & Encourage Social Activities, Encourage Light Exercise, and Encourage Active Thinking'}
                 />
