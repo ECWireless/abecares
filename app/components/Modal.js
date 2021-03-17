@@ -22,7 +22,7 @@ export default class Modal extends React.Component {
                 <CloseIcon />
             </div>
             {this.props.modalToggle === 'modal__true' ? <iframe
-                src={`https://player.vimeo.com/video/386831702${this.state.autoplayToggle}`}
+                src={`https://player.vimeo.com/video/522572863${this.state.autoplayToggle}`}
                 id="modal__video" frameBorder="0"
                 allow="autoplay; fullscreen" allowFullScreen>
             </iframe> 
