@@ -23,7 +23,7 @@ export default function Footer(props) {
                     target="_blank"
                     className="p-s" id="footer__link"
                 >
-                    6611 Wilkins Avenue, Pittsburgh PA 15217 US
+                    5817 Penn Ave, Pittsburgh, PA 15206
                 </a>
             </div>
 
@@ -31,8 +31,8 @@ export default function Footer(props) {
                 <h3 className="h3">Book an Appointment</h3>
                 <div className="line" id="footer__line" />
                 <p className="p-s" id="footer__paragraph">We respond within 24 hours!</p>
-                <a href="tel: 4123203696">
-                    <button className="button button__l" id="footer__button">(412) 320-3696</button>
+                <a href="tel: 4126679955">
+                    <button className="button button__l" id="footer__button">412.667.9955</button>
                 </a>
             </div>
         </footer>
