@@ -9,8 +9,8 @@ export default function Testimonial(props) {
                         <div className="line" style={{borderBottom: '4px solid #fff'}} />
                     </div>
 
-                    <h3 className="h3" style={{color: '#fff'}}>"A very knowledgeable and compatible team, greatly improving the quality of my life."</h3>
-                    <p className="p-s" id="testimonial__paragraph">- John Smith</p>
+                    <h3 className="h3" style={{color: '#fff'}}>"Abraham Home Care is the best company to take of my brother. The agency treats my brother with respect and they always makes sure that he has everything that he needs.  My family thanks Mr. Jordan so very much, he has proven himself to be a good person."</h3>
+                    <p className="p-s" id="testimonial__paragraph">- Aeman Hassan</p>
                 </div>
             <div id="testimonial__photo-container">
                 {/* <img id="testimonial__photo" src="/home-care-photo-3.jpg" alt="Home Care Photo"/> */}
