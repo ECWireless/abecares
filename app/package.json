@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@sanity/client": "^1.149.16",
+    "@sendgrid/mail": "^7.4.4",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.1",
     "fs": "0.0.1-security",
