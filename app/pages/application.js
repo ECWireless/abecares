@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Head from 'next/head';
 import Router from 'next/router'
 import '../sass/styles.scss';
@@ -10,24 +10,20 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
-export default class application extends Component {
-	state = {
-		loaded: false,
-		sidebarToggle: 'sidebar__false',
-		backdropToggle: 'backdrop__false',
-	}
+const Application = () => {
+	const [loaded, setLoaded] = React.useState(false);
+	const [sidebarToggle, setSidebarToggle] = React.useState('sidebar__false');
+	const [backdropToggle, setBackdropToggle] = React.useState('backdrop__false');
+	const [modalToggle, setModalToggle] = React.useState('modal__false');
 
-	componentDidMount() {
-		this.setState({ ...this.state, loaded: true })
-	}
+	React.useEffect(() => {
+		setLoaded(true);
+	}, []);
 	
-	scrollToLocation = (reference) => {
-		this.setState({
-			...this.state,
-			sidebarToggle: 'sidebar__false',
-			backdropToggle: 'backdrop__false',
-			modalToggle: 'modal__false',
-		})
+	const scrollToLocation = (reference) => {
+		setSidebarToggle('sidebar__false');
+		setBackdropToggle('backdrop__false');
+		setModalToggle('modal__false');
 
 		switch(reference) {
 			case 'home':
@@ -50,46 +46,36 @@ export default class application extends Component {
 		}
 	}
 
-	onSidebarToggle = (reference) => {
-		if (this.state.sidebarToggle === 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
-			this.setState({
-				...this.state,
-				sidebarToggle: 'sidebar__false',
-				backdropToggle: 'backdrop__false',
-			})
-			this.scrollToLocation(reference);
-		} else if (this.state.sidebarToggle !== 'sidebar__true' && this.state.modalToggle !== 'modal__true') {
-			this.setState({
-				...this.state,
-				sidebarToggle: 'sidebar__true',
-				backdropToggle: 'backdrop__true',
-			})
+	const onSidebarToggle = (reference) => {
+		if (sidebarToggle === 'sidebar__true' && modalToggle !== 'modal__true') {
+			setSidebarToggle('sidebar__false');
+			setBackdropToggle('backdrop__false');
+			scrollToLocation(reference);
+		} else if (sidebarToggle !== 'sidebar__true' && modalToggle !== 'modal__true') {
+			setSidebarToggle('sidebar__true');
+			setBackdropToggle('backdrop__true');
 		} else {
-			this.setState({
-				...this.state,
-				backdropToggle: 'backdrop__false',
-				modalToggle: 'modal__false',
-			})
+			setBackdropToggle('backdrop__false');
+			setModalToggle('modal__false');
 		}
 	}
 
-    render() {
-        return (
-            <div>
-                <Head>
-					<title>Employee Application | Abraham Home Care</title>
-					<link rel="icon" href="/favicon.ico" />
-					<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
-					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
-				</Head>
-                <main>
-					{this.state.loaded && (
+	return (
+		<div>
+			<Head>
+				<title>Employee Application | Abraham Home Care</title>
+				<link rel="icon" href="/favicon.ico" />
+				<link rel="stylesheet" href="https://use.typekit.net/atg0jpe.css"></link>
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"></link>
+			</Head>
+				<main>
+					{loaded && (
 						<React.Fragment>
-							<Sidebar sidebarToggle={this.state.sidebarToggle} onSidebarToggle={this.onSidebarToggle} />
-							<Backdrop backdropToggle={this.state.backdropToggle} onSidebarToggle={this.onSidebarToggle} />
+							<Sidebar sidebarToggle={sidebarToggle} onSidebarToggle={onSidebarToggle} />
+							<Backdrop backdropToggle={backdropToggle} onSidebarToggle={onSidebarToggle} />
 						</React.Fragment>
 					)}
-					<Header scrollToLocation={this.scrollToLocation} onSidebarToggle={this.onSidebarToggle} />
+					<Header scrollToLocation={scrollToLocation} onSidebarToggle={onSidebarToggle} />
 					<section className="container" id="application">
 						<p id="application__subtitle" className="p-m">Application</p>
 						<div id="application__line" className="line" />
@@ -97,9 +83,10 @@ export default class application extends Component {
 						<p id="application__paragraph" className="p-m"></p>
 						<ApplicationForm />
 					</section>
-					<Footer scrollToLocation={this.scrollToLocation} />
-                </main>
-            </div>
-        )
-    }
+					<Footer scrollToLocation={scrollToLocation} />
+				</main>
+			</div>
+	)
 }
+
+export default Application;
