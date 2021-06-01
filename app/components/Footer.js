@@ -32,7 +32,7 @@ export default function Footer(props) {
                 <div className="line" id="footer__line" />
                 <p className="p-s" id="footer__paragraph">We respond within 24 hours!</p>
                 <a href="tel: 4126679955">
-                    <button className="button button__l" id="footer__button">412.667.9955</button>
+                    <button className="button button__l" id="footer__button">412.677.9955</button>
                 </a>
             </div>
         </footer>
