@@ -3,7 +3,7 @@
     background: $color-gradient-green;
 
     @include respond(tab-port) {
-        grid-template-rows: 5rem 40rem 50rem;
+        grid-template-rows: 5rem 60rem 50rem;
     }
 
     &__subtitle {
@@ -48,6 +48,6 @@
         height: 100%;
         width: 100%;
         background-size: cover;
-        background-position: center;
+        background-position: top;
     }
 }

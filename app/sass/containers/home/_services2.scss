@@ -91,7 +91,7 @@
     &__photo {
         grid-row: 5 / 6;
         grid-column: 7 / -1;
-        background-position: center;
+        background-position: top;
         background-size: cover;
 
         @include respond(tab-port) {
@@ -102,7 +102,7 @@
     &__photo-alt {
         grid-row: 5 / 6;
         grid-column: 1 / 9;
-        background-position: center;
+        background-position: top;
         background-size: cover;
 
         @include respond(tab-port) {

@@ -6,7 +6,10 @@ export default function Hero(props) {
             <div id="hero__white-bg" />
             <div id="hero__photo-container">
                 {/* <img id="hero__photo" src="/home-care-photo-1.jpg" alt="Home Care Photo"/> */}
-                <div style={{backgroundImage: 'url(/new-photo-1.jpeg)'}} id="hero__photo" alt="Home Care Hero Photo" />
+                {/* <div style={{backgroundImage: 'url(/new-photo-1.jpeg)'}} id="hero__photo" alt="Home Care Hero Photo" /> */}
+                <video id="about__video" poster="/home-care-photo-2.jpg" autoPlay loop muted playsInline>
+                    <source src="./HeroVideo.mp4" type="video/mp4"/>
+                </video>
             </div>
 
             <div id="hero__text-container">
