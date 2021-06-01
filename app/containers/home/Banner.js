@@ -9,7 +9,7 @@ export default function Banner(props) {
             <div className="banner__text-container banner__text-container--1">
                 <h3 className="h3" id="banner__header">Contact Us</h3>
                 <div className="line" id="banner__line" />
-                <a href="tel: 4126679955" id="banner__link" className="p-s">412.677.9955</a>
+                <a href="tel: 4126779955" id="banner__link" className="p-s">412.677.9955</a>
                 <a href="mailto: info@abecares.com" className="p-s" id="banner__paragraph">info@abecares.com</a>
             </div>
 

@@ -31,7 +31,7 @@ export default function Footer(props) {
                 <h3 className="h3">Book an Appointment</h3>
                 <div className="line" id="footer__line" />
                 <p className="p-s" id="footer__paragraph">We respond within 24 hours!</p>
-                <a href="tel: 4126679955">
+                <a href="tel: 4126779955">
                     <button className="button button__l" id="footer__button">412.677.9955</button>
                 </a>
             </div>
