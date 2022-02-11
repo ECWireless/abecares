@@ -14,7 +14,7 @@
     "axios": "^0.21.1",
     "fs": "0.0.1-security",
     "next": "^9.4.4",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "react": "16.13.1",
     "react-animate-on-scroll": "^2.1.5",
